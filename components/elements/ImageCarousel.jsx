@@ -61,7 +61,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                         centeredSlides
                     >
                         {gallery?.map((item, index) => (
-                            <SwiperSlide className="relative aspect-[711/472]">
+                            <SwiperSlide key={`image-slide-${index}`} className="relative aspect-[711/472]">
                                 {({ isActive }) => (
                                     isActive ? (
                                         <div className="relative flex flex-col h-full" style={{

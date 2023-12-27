@@ -30,7 +30,7 @@ function OurProducts({ heading, description, products }) {
                 </header>
                 <div className="mt-[120px] grid grid-cols-6 gap-5" id="our-products">
                     {products.map((product, index) => (
-                        <motion.a variants={fadeInElement} custom={index} whileInView="animate" initial="initial" viewport={{ once: true }} href="#" className="relative product-card" style={{ gridArea: `grid-area-${index + 1}` }}>
+                        <motion.a key={`product-card-${index}`} variants={fadeInElement} custom={index} whileInView="animate" initial="initial" viewport={{ once: true }} href="#" className="relative product-card" style={{ gridArea: `grid-area-${index + 1}` }}>
                             <div className="aspect-[1/1] flex flex-col justify-end p-10 text-white" style={{
                                 backgroundImage: `url(${product?.image?.asset?.url})`,
                                 backgroundRepeat: "no-repeat",
