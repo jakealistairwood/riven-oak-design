@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -9,7 +9,6 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 
 const ImageCarousel = ({ description, heading, gallery }) => {
-    const [activeIndex, setActiveIndex] = useState(2);
 
     const prevButtonRef = useRef(null);
     const nextButtonRef = useRef(null);
@@ -62,13 +61,18 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                         centeredSlides
                     >
                         {gallery?.map((item, index) => (
-                            <SwiperSlide className="aspect-[711/472]">
+                            <SwiperSlide className="relative aspect-[711/472]">
                                 {({ isActive }) => (
                                     isActive ? (
-                                        <div>
-                                            <img className="h-full w-full object-cover" src={item?.image?.asset?.url} alt={item?.image?.asset?.alt} />
-                                            <div>
-                                                <h3></h3>
+                                        <div className="relative flex flex-col h-full" style={{
+                                            backgroundImage: `url(${item?.image?.asset?.url})`,
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundSize: "cover",
+                                        }}>
+                                            <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
+                                            <div className="justify-end p-10 mt-auto text-white relative z-[2]">
+                                                <h3 className="text-[2rem] font-crimson-pro font-normal mb-1">{item?.content?.title}</h3>
+                                                <p className="opacity-90 text-xl">{item?.content?.description}</p>
                                             </div>
                                         </div>
                                     ) : (
