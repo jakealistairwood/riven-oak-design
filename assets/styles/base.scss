@@ -28,6 +28,11 @@ h2 {
 #hero-masthead {
     min-height: calc(100dvh - 94px);
     margin-top: 94px;
+
+    @media screen and (max-width: 768px) {
+        min-height: calc(100dvh - 67px);
+        margin-top: 67px;
+    }
 }
 
 #our-products {
