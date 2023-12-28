@@ -8,6 +8,10 @@ module.exports = {
   theme: {
     container: {
       center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1rem"
+      }
     },
     extend: {
       fontFamily: {

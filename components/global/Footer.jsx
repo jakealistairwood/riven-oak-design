@@ -29,13 +29,13 @@ async function Footer() {
 
     return (
         <footer>
-            <div className="m-10 bg-[#F9F9F9]">
+            <div className="m-4 md:m-10 bg-[#F9F9F9]">
                 <div className="container mx-auto pt-16 pb-7">
-                    <div className="flex flex-wrap justify-between">
+                    <div className="flex flex-col gap-y-20 items-center lg:items-start px-8 lg:flex-row lg:flex-wrap lg:justify-between">
                         <img className="max-w-[224px] w-full h-fit" src="/images/footer-logo.png" alt="" />
-                        <div className="flex gap-[140px]">
+                        <div className="flex flex-col md:flex-row gap-y-10 md:gap-[140px]">
                             <nav>
-                                <ul>
+                                <ul className="text-center md:text-left">
                                     <li className="mb-7 font-semibold">Site</li>
                                     <li className="mb-4"><a href="/">Home</a></li>
                                     <li className="mb-4"><a href="/about">About</a></li>
@@ -44,7 +44,7 @@ async function Footer() {
                                 </ul>
                             </nav>
                             <nav>
-                                <ul>
+                                <ul className="text-center md:text-left">
                                     <li className="mb-7 font-semibold">Products</li>
                                     <li className="mb-4"><a href="">Gates</a></li>
                                     <li className="mb-4"><a href="">Swing Seats</a></li>
@@ -52,7 +52,7 @@ async function Footer() {
                                 </ul>
                             </nav>
                             <nav>
-                                <ul>
+                                <ul className="text-center md:text-left">
                                     <li className="mb-7 font-semibold">Social</li>
                                     <li className="mb-4"><a href={`mailto:${footer?.contact_info?.email_address}`}>{footer?.contact_info?.email_address}</a></li>
                                     <li className="mb-4"><a href={`tel:${footer?.contact_info?.phone_number.replace(/\s/g, '')}`}>{footer?.contact_info?.phone_number}</a></li>
@@ -60,7 +60,7 @@ async function Footer() {
                             </nav>
                         </div>
                     </div>
-                    <div className="pt-7 border-t border-solid border-[#E4E4E4] mt-14 flex justify-between items-center w-full">
+                    <div className="pt-7 border-t border-solid border-[#E4E4E4] mt-14 flex flex-col-reverse md:flex-row gap-y-4 justify-between items-center w-full">
                         <small className="text-[#727272]">&copy; 2023, Riven Oak Design. All rights reserved.</small>
                         <div className="flex items-center gap-[10px]">
                             {footer?.social_icons?.map((icon, index) => (

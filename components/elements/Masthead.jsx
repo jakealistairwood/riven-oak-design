@@ -12,7 +12,7 @@ function Masthead({ heading, description, image }) {
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
             }}>
-                <div className="flex flex-col w-full max-w-[574px] text-center">
+                <div className="flex flex-col w-full max-w-[574px] text-center px-4">
                     <h1 className="font-fraunces" dangerouslySetInnerHTML={{ __html: heading }} />
                     <p className="text-xl opacity-80 mt-6" dangerouslySetInnerHTML={{ __html: description }} />
                 </div>

@@ -31,15 +31,15 @@ function OurProducts({ heading, description, products }) {
                 <div className="mt-[120px] grid grid-cols-6 gap-5" id="our-products">
                     {products.map((product, index) => (
                         <motion.a key={`product-card-${index}`} variants={fadeInElement} custom={index} whileInView="animate" initial="initial" viewport={{ once: true }} href="#" className="relative product-card" style={{ gridArea: `grid-area-${index + 1}` }}>
-                            <div className="aspect-[1/1] flex flex-col justify-end p-10 text-white" style={{
+                            <div className="aspect-[1/1] flex flex-col justify-end p-6 lg:p-10 text-white" style={{
                                 backgroundImage: `url(${product?.image?.asset?.url})`,
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
                             }}>
                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                 <div className="relative z-[2]">
-                                    <small className="uppercase text-normal">Product</small>
-                                    <h3 className="text-[2rem] font-medium">{product?.content?.title}</h3>
+                                    <small className="text-sm lg:text-normal uppercase text-normal">Product</small>
+                                    <h3 className="text-[1.8rem] lg:text-[2rem] font-medium leading-[1.1]">{product?.content?.title}</h3>
                                 </div>
                             </div>
                         </motion.a>

@@ -2,11 +2,12 @@
 
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
 
 //Swiper SCSS
 import 'swiper/scss';
+import 'swiper/scss/autoplay';
 import 'swiper/scss/navigation';
 
 const ImageCarousel = ({ description, heading, gallery }) => {
@@ -20,7 +21,11 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                 <div className="image-carousel-swiper">
                     <Swiper
                         draggable 
-                        modules={[Navigation]} 
+                        autoplay={{
+                            delay: 3500,
+                            disableOnInteraction: true,
+                        }}
+                        modules={[Navigation, Autoplay]} 
                         navigation={{
                             prevEl: prevButtonRef.current,
                             nextEl: nextButtonRef.current,

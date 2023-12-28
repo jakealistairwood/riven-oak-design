@@ -8,9 +8,13 @@
     @apply max-w-[1440px] mx-auto;
 }
 
+h1, h2, h3, h4 {
+    @apply leading-[1.1];
+}
+
 h1 {
     font-family: "Fraunces_9pt-Light", serif !important; 
-    @apply text-[64px] leading-[1.1];
+    @apply text-[2.25rem] md:text-[4rem] leading-[1.1];
 }
 
 h2, p {
@@ -27,7 +31,16 @@ h2, p {
     "grid-area-1 grid-area-1 grid-area-1 grid-area-2 grid-area-2 grid-area-2"
     "grid-area-1 grid-area-1 grid-area-1 grid-area-2 grid-area-2 grid-area-2"
     "grid-area-3 grid-area-3 grid-area-4 grid-area-4 grid-area-4 grid-area-4"
-    "grid-area-5 grid-area-5 grid-area-4 grid-area-4 grid-area-4 grid-area-4"
+    "grid-area-5 grid-area-5 grid-area-4 grid-area-4 grid-area-4 grid-area-4";
+
+    @media screen and (max-width: 640px) {
+        grid-template-areas: unset;
+        grid-template-columns: 1fr;
+
+        .product-card {
+            grid-area: unset !important;
+        }
+    }
 }
 
 .image-carousel-swiper {

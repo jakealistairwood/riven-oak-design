@@ -19,7 +19,7 @@ function ParallaxImages({ top_slider, bottom_slider }) {
     console.log(top_slider, bottom_slider);
 
     return (
-        <div className="relative flex flex-col gap-[1vw] mt-[160px]" ref={containerRef}>
+        <div className="relative overflow-hidden hidden md:flex flex-col gap-[1vw] mt-[160px]" ref={containerRef}>
             <motion.div className="flex items-center gap-[1vw] w-[120vw] -left-[10vw]" style={{ x: x1 }}>
                 {top_slider?.map((item, index) => (
                     <div key={`top-slider-${index}`} className="relative aspect-[16/9] max-w-[450px] w-full">
