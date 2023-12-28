@@ -21,6 +21,10 @@ h2, p {
     @apply font-crimson-pro font-extralight;
 }
 
+h2 {
+    @apply text-[3.125rem] md:text-[4rem];
+}
+
 #hero-masthead {
     min-height: calc(100dvh - 94px);
     margin-top: 94px;

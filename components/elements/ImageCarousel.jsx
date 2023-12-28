@@ -38,13 +38,19 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                         spaceBetween={10} 
                         slidesPerView={2} 
                         centeredSlides
+                        // breakpoints={{
+                        //     768: {
+                        //         slidesPerView: 2,
+                        //         initialSlide: 3
+                        //     }
+                        // }}
                     >
-                        <header className="flex justify-between w-full pb-16 border-b border-solid border-[#DEDEDE]">
+                        <header className="flex flex-col md:flex-row justify-between items-center md:items-start gap-y-10 text-center md:text-left w-full pb-16 border-b border-solid border-[#DEDEDE]">
                             <div className="flex flex-col w-full max-w-[560px]">
-                                <h2 className="text-[70px] tracking-tighter">{heading}</h2>
+                                <h2>{heading}</h2>
                                 <p className="mt-3 text-xl opacity-80">{description}</p>
                             </div>
-                            <div className="flex items-center h-fit self-end gap-[10px]">
+                            <div className="flex items-center h-fit md:self-end gap-[10px]">
                                 <motion.button
                                     className="h-[70px] w-[70px] rounded-full flex items-center justify-center border border-solid border-[#D4D4D4]"
                                     ref={prevButtonRef}

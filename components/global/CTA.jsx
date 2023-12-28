@@ -29,10 +29,10 @@ async function CTA() {
     const { cta } = data;
 
     return (
-        <section className={`${cta?.add_image_gallery ? "pt-24 pb-24 md:pb-0" : "py-24"}`}>
+        <section className={`${cta?.add_image_gallery ? "pt-8 md:pt-24 pb-24 md:pb-0" : "py-24"}`}>
             <div className="container">
                 <div className="flex flex-col text-center max-w-[650px] w-full mx-auto">
-                    <h2 className="text-[64px] leading-[1.1] mb-10" dangerouslySetInnerHTML={{ __html: cta?.heading }} />
+                    <h2 className="mb-10" dangerouslySetInnerHTML={{ __html: cta?.heading }} />
                     <p className="text-xl text-dark-grey opacity-80">{cta?.description}</p>
                     <a className="mt-16 border border-solid border-accent hover:bg-accent hover:text-white text-accent px-11 py-4 w-fit mx-auto" href="mailto:jack@rivenoakdesign.com">
                         Get in Touch

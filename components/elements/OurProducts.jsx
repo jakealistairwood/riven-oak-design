@@ -25,7 +25,7 @@ function OurProducts({ heading, description, products }) {
         <section>
             <div className="container mx-auto py-28">
                 <header className="section-header text-center max-w-[781px] w-full mx-auto">
-                    <h2 className="text-[64px]" dangerouslySetInnerHTML={{ __html: heading }} />
+                    <h2 dangerouslySetInnerHTML={{ __html: heading }} />
                     <p className="opacity-80 text-xl pt-8 text-dark-grey" dangerouslySetInnerHTML={{ __html: description }} />
                 </header>
                 <div className="mt-[120px] grid grid-cols-6 gap-5" id="our-products">
