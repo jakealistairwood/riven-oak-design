@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 //Swiper SCSS
 import 'swiper/scss';
@@ -34,17 +35,18 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                             swiper.params.navigation.prevEl = prevButtonRef.current;
                             swiper.params.navigation.nextEl = nextButtonRef.current;
                     }}
-                        initialSlide={3} 
+                        initialSlide={1} 
                         spaceBetween={10} 
-                        slidesPerView={2} 
-                        centeredSlides
+                        slidesPerView={1} 
+                        // centeredSlides
                         loop
-                        // breakpoints={{
-                        //     768: {
-                        //         slidesPerView: 2,
-                        //         initialSlide: 3
-                        //     }
-                        // }}
+                        breakpoints={{
+                            768: {
+                                slidesPerView: 2,
+                                initialSlide: 3,
+                                centeredSlides: true,
+                            }
+                        }}
                     >
                         <header className="flex flex-col md:flex-row justify-between items-center md:items-start gap-y-10 text-center md:text-left w-full pb-16 border-b border-solid border-[#DEDEDE]">
                             <div className="flex flex-col w-full max-w-[560px]">
@@ -57,14 +59,14 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                                     ref={prevButtonRef}
                                     whileTap={{ scale: 0.9 }}
                                 >
-                                    <img src="/images/arrow-left.svg" alt="" />
+                                    <Image height={32} width={32} src="/images/arrow-left.svg" alt="" />
                                 </motion.button>
                                 <motion.button
                                     className="h-[70px] w-[70px] rounded-full flex items-center justify-center border border-solid border-[#D4D4D4]"
                                     ref={nextButtonRef}
                                     whileTap={{ scale: 0.9 }}
                                 >
-                                    <img src="/images/arrow-right.svg" alt="" />
+                                    <Image height={32} width={32} src="/images/arrow-right.svg" alt="" />
                                 </motion.button>
                             </div>
                         </header>
@@ -72,7 +74,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                                 <SwiperSlide key={`image-slide-${index}`} className="relative aspect-[711/472]">
                                     {({ isActive }) => (
                                         isActive ? (
-                                            <div className="relative flex flex-col justify-between h-full p-10" style={{
+                                            <div className="relative flex flex-col justify-between h-full p-6 md:p-10" style={{
                                                 backgroundImage: `url(${item?.image?.asset?.url})`,
                                                 backgroundRepeat: "no-repeat",
                                                 backgroundSize: "cover",
@@ -86,7 +88,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                                             </div>
                                         ) : (
                                             <div className="w-auto opacity-50">
-                                                <img className="h-full w-full object-cover" src={item?.image?.asset?.url} alt={item?.image?.asset?.alt} />
+                                                <Image className="h-full w-full object-cover" fill={true} src={item?.image?.asset?.url} alt={item?.image?.asset?.alt} />
                                             </div>
                                         )
                                     )}
