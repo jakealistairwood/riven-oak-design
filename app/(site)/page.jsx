@@ -19,6 +19,7 @@ async function fetchHomepageData() {
         masthead{
           heading,
           description,
+          links,
           image{
             asset->
           }

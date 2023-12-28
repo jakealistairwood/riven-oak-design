@@ -41,10 +41,21 @@ export const mastheadType = defineType({
                             type: "string"
                         },
                         {
-                            name: "url",
-                            title: "Url",
-                            type: "url",
-                        }
+                            name: "link_url",
+                            title: "Link URL",
+                            type: "string",
+                        },
+                        {
+                            name: 'button_type',
+                            title: 'Button Type',
+                            type: 'string',
+                            options: {
+                              list: [
+                                {title: 'Primary', value: 'primary'},
+                                {title: 'Secondary', value: 'secondary'}
+                              ],
+                            }
+                          }
                     ]
                 }
             ]
