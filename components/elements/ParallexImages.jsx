@@ -22,14 +22,14 @@ function ParallaxImages({ top_slider, bottom_slider }) {
         <div className="relative flex flex-col gap-[1vw] mt-[160px]" ref={containerRef}>
             <motion.div className="flex items-center gap-[1vw] w-[120vw] -left-[10vw]" style={{ x: x1 }}>
                 {top_slider?.map((item, index) => (
-                    <div className="relative aspect-[16/9] max-w-[450px] w-full">
+                    <div key={`top-slider-${index}`} className="relative aspect-[16/9] max-w-[450px] w-full">
                         <Image fill={true} src={item?.asset?.url} alt="" />
                     </div>
                 ))}
             </motion.div>
             <motion.div className="flex items-center gap-[1vw] w-[120vw] -left-[10vw]" style={{ x: x2 }}>
                 {bottom_slider?.map((item, index) => (
-                    <div className="relative aspect-[16/9] max-w-[450px] w-full">
+                    <div key={`bottom-slider-${index}`} className="relative aspect-[16/9] max-w-[450px] w-full">
                         <Image fill={true} src={item?.asset?.url} alt="" />
                     </div>
                 ))}
