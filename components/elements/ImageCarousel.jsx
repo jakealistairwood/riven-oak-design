@@ -38,6 +38,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                         spaceBetween={10} 
                         slidesPerView={2} 
                         centeredSlides
+                        loop
                         // breakpoints={{
                         //     768: {
                         //         slidesPerView: 2,
