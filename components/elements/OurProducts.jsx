@@ -19,8 +19,6 @@ const fadeInElement = {
 
 function OurProducts({ heading, description, products }) {
 
-    console.log(products);
-
     return (
         <section>
             <div className="container mx-auto py-28">

@@ -29,3 +29,13 @@ h2, p {
     "grid-area-3 grid-area-3 grid-area-4 grid-area-4 grid-area-4 grid-area-4"
     "grid-area-5 grid-area-5 grid-area-4 grid-area-4 grid-area-4 grid-area-4"
 }
+
+.image-carousel-swiper {
+    .swiper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .swiper-wrapper {
+        margin-top: 4rem;
+    }
+}

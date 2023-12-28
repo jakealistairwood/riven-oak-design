@@ -21,7 +21,7 @@ async function Header(props) {
                             </li>
                         ))}
                     </ul>
-                    <a className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block w-full max-w-[244px]" href="">
+                    <a className="xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2 block w-full max-w-[244px]" href="">
                         <Image priority className="w-full" src="/images/logo.png" width={244} height={30} />
                     </a>
                     <ul className="flex items-center gap-x-4">
