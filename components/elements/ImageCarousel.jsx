@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { motion } from "framer-motion";
 
 //Swiper SCSS
 import 'swiper/scss';
@@ -39,31 +40,34 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                                 <p className="mt-3 text-xl opacity-80">{description}</p>
                             </div>
                             <div className="flex items-center h-fit self-end gap-[10px]">
-                                <button
+                                <motion.button
                                     className="h-[70px] w-[70px] rounded-full flex items-center justify-center border border-solid border-[#D4D4D4]"
                                     ref={prevButtonRef}
+                                    whileTap={{ scale: 0.9 }}
                                 >
                                     <img src="/images/arrow-left.svg" alt="" />
-                                </button>
-                                <button
+                                </motion.button>
+                                <motion.button
                                     className="h-[70px] w-[70px] rounded-full flex items-center justify-center border border-solid border-[#D4D4D4]"
                                     ref={nextButtonRef}
+                                    whileTap={{ scale: 0.9 }}
                                 >
                                     <img src="/images/arrow-right.svg" alt="" />
-                                </button>
+                                </motion.button>
                             </div>
                         </header>
                         {gallery?.map((item, index) => (
                                 <SwiperSlide key={`image-slide-${index}`} className="relative aspect-[711/472]">
                                     {({ isActive }) => (
                                         isActive ? (
-                                            <div className="relative flex flex-col h-full" style={{
+                                            <div className="relative flex flex-col justify-between h-full p-10" style={{
                                                 backgroundImage: `url(${item?.image?.asset?.url})`,
                                                 backgroundRepeat: "no-repeat",
                                                 backgroundSize: "cover",
                                             }}>
+                                                {/* <small className="relative z-[2] text-white uppercase font-bold px-4 py-2 border border-solid border-white rounded-full w-fit">Step {index + 1}</small> */}
                                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
-                                                <div className="justify-end p-10 mt-auto text-white relative z-[2]">
+                                                <div className="justify-end mt-auto text-white relative z-[2]">
                                                     <h3 className="text-[2rem] font-crimson-pro font-normal mb-1">{item?.content?.title}</h3>
                                                     <p className="opacity-90 text-xl">{item?.content?.description}</p>
                                                 </div>

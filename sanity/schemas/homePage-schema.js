@@ -159,37 +159,5 @@ export const homepageSchema = defineType({
                 }
             ]
         }),
-        defineField({
-            name: "cta",
-            title: "CTA",
-            type: "object",
-            fields: [
-                {
-                    name: "heading",
-                    title: "Heading",
-                    type: "string",
-                },
-                {
-                    name: "description",
-                    title: "Description",
-                    type: "string",
-                },
-                {
-                    name: "add_image_gallery",
-                    title: "Add Image Gallery",
-                    type: "boolean",
-                },
-                {
-                    name: "gallery",
-                    title: "Gallery",
-                    type: "array",
-                    of: [
-                        {
-                            type: "image",
-                        }
-                    ]
-                }
-            ]
-        })
     ]
 })

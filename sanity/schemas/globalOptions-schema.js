@@ -28,13 +28,28 @@ export const globalOptions = defineType({
                 {
                     name: "gallery",
                     title: "Gallery",
-                    type: "array",
-                    of: [
+                    type: "object",
+                    description: "Requires 5 images on each slider to work properly",
+                    fields: [
                         {
-                            type: "image",
+                            name: "top_slider",
+                            title: "Top Slider",
+                            type: "array",
+                            of: [{
+                                type: "image",
+                            }]
+                        },
+                        {
+                            name: "bottom_slider",
+                            title: "Bottom Slider",
+                            type: "array",
+                            of: [{
+                                type: "image"
+                            }]
                         }
-                    ]
-                }
+                    ],
+                    hidden: ({ parent }) => !parent?.add_image_gallery
+                },
             ]
         }),
         {

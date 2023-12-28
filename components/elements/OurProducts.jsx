@@ -1,19 +1,21 @@
 "use client";
+
 import { motion } from "framer-motion";
 
 const fadeInElement = {
     initial: {
         opacity: 0,
         y: 200,
-        filter: "blur(12px)"
+        filter: "blur(12px)",
     },
     animate: {
         opacity: 1,
         y: 0,
         filter: "blur(0px)",
         transition: (index) => ({
-            duration: 0.3
-        })
+            delay: index * 0.5,
+            duration: 0.6
+        }),
     }
 }
 
@@ -34,7 +36,7 @@ function OurProducts({ heading, description, products }) {
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
                             }}>
-                                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%);" }} />
+                                <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                 <div className="relative z-[2]">
                                     <small className="uppercase text-normal">Product</small>
                                     <h3 className="text-[2rem] font-medium">{product?.content?.title}</h3>
