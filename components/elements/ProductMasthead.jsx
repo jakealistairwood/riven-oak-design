@@ -11,6 +11,8 @@ import Link from "next/link";
 
 function ProductMasthead(props) {
 
+    console.log(props);
+
     const { title, product_content } = props;
 
     console.log(product_content);
@@ -18,7 +20,7 @@ function ProductMasthead(props) {
     return (
         <section>
             <div className="container" id="product-masthead">
-                <div className="grid gap-16 grid-cols-12 place-content-center">
+                <div className="grid gap-16 grid-cols-12 place-content-center pb-24">
                     {/* <Swiper>
 
                     </Swiper> */}
@@ -31,7 +33,7 @@ function ProductMasthead(props) {
                         <div className="mt-10">
                             {product_content?.description.map((block, index) => (
                                 block?.children?.map((child, index) => (
-                                    <p>{child.text}</p>
+                                    <p className="text-lg mt-4 opacity-80 font-inter">{child.text}</p>
                                 ))
                             ))}
                         </div>

@@ -19,6 +19,11 @@ export const productType = defineType({
                 maxLength: 96,
             }
         },
+        {  
+            name: "featured_image",
+            title: "Featured Image",
+            type: "image",
+        },
         {
             name: "product_content",
             title: "Product Content",

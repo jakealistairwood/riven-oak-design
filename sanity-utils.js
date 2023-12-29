@@ -35,8 +35,11 @@ export async function getProducts() {
     return createClient(clientConfig).fetch(
         groq`*[_type == "product"]{
             _id,
-            "slug": slug.current,
             title,
+            "slug": slug.current,
+            featured_image{
+              asset->
+            },
             product_content
           }`,
     )

@@ -13,7 +13,7 @@ function Homepage(props) {
             <ScrollableImage {...homepage.scrollable_image} />
             <ImageCarousel {...homepage.image_swiper} />
             <OurProducts {...homepage.our_products} />
-            <CTA />
+            {/* <CTA /> */}
         </>
     )
 }

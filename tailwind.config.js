@@ -15,6 +15,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
+        "inter": ["Inter", "sans-serif"],
         "crimson-pro": ["Crimson Pro", "serif"],
         "fraunces": ["Fraunces", "serif"],
       },

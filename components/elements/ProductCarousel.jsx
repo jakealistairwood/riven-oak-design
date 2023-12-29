@@ -1,5 +1,6 @@
 import { useRef } from "react";
 
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation } from "swiper/modules";
 import Image from "next/image";
@@ -20,6 +21,7 @@ function ProductCarousel({ productImages }) {
             <Swiper
                 slidesPerView={1}
                 modules={[EffectFade, Navigation]}
+                effect={"fade"}
                 navigation={{
                     prevEl: prevButtonRef.current,
                     nextEl: nextButtonRef.current,
@@ -36,14 +38,16 @@ function ProductCarousel({ productImages }) {
                         </div>
                     </SwiperSlide>
                 ))}
-                <div className="flex items-cente gap-[10px] absolute bottom-8 right-10 z-[2]">
-                    <button ref={prevButtonRef} className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center">
-                        <Image src="/images/arrow-left.svg" height={32} width={32} alt="" />
-                    </button>
-                    <button ref={nextButtonRef} className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center">
-                        <Image src="/images/arrow-right.svg" height={32} width={32} alt="" />
-                    </button>
-                </div>
+                {productImages.length > 1 && (
+                    <div className="flex items-center gap-[10px] absolute bottom-8 right-10 z-[2]">
+                        <motion.button whileTap={{ scale: 0.9 }} ref={prevButtonRef} className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center">
+                            <Image src="/images/arrow-left.svg" height={32} width={32} alt="" />
+                        </motion.button>
+                        <motion.button whileTap={{ scale: 0.9 }} ref={nextButtonRef} className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center">
+                            <Image src="/images/arrow-right.svg" height={32} width={32} alt="" />
+                        </motion.button>
+                    </div>
+                )}
             </Swiper>
         </div>
     )
