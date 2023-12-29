@@ -1,11 +1,5 @@
 import { clientConfig } from '@/sanity/config/client-config';
-import Image from 'next/image'
-import { getPage } from '@/sanity-utils'
-import Masthead from '@/components/elements/Masthead';
 import { createClient, groq } from "next-sanity";
-import ImageCarousel from '@/components/elements/ImageCarousel';
-import ScrollableImage from '@/components/elements/ScrollableImage';
-import OurProducts from '@/components/elements/OurProducts';
 import Homepage from '@/components/pages/Homepage';
 
 async function fetchHomepageData() {

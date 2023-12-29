@@ -34,19 +34,12 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                         onBeforeInit={(swiper) => {
                             swiper.params.navigation.prevEl = prevButtonRef.current;
                             swiper.params.navigation.nextEl = nextButtonRef.current;
-                    }}
-                        initialSlide={1} 
-                        spaceBetween={10} 
-                        slidesPerView={1} 
-                        // centeredSlides
-                        loop
-                        breakpoints={{
-                            768: {
-                                slidesPerView: 2,
-                                initialSlide: 3,
-                                centeredSlides: true,
-                            }
                         }}
+                        initialSlide={3} 
+                        spaceBetween={10} 
+                        slidesPerView={2} 
+                        centeredSlides
+                        loop
                     >
                         <header className="flex flex-col md:flex-row justify-between items-center md:items-start gap-y-10 text-center md:text-left w-full pb-16 border-b border-solid border-[#DEDEDE]">
                             <div className="flex flex-col w-full max-w-[560px]">
@@ -82,7 +75,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                                                 {/* <small className="relative z-[2] text-white uppercase font-bold px-4 py-2 border border-solid border-white rounded-full w-fit">Step {index + 1}</small> */}
                                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                                 <div className="justify-end mt-auto text-white relative z-[2]">
-                                                    <h3 className="text-[2rem] font-crimson-pro font-normal mb-1">{item?.content?.title}</h3>
+                                                    <h3 className="text-[1.8rem] font-inter font-normal mb-3">{item?.content?.title}</h3>
                                                     <p className="opacity-90 text-xl">{item?.content?.description}</p>
                                                 </div>
                                             </div>

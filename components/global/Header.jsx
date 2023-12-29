@@ -1,10 +1,13 @@
-import { createClient } from "next-sanity";
-import { getPages } from "@/sanity-utils";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import MenuButton from "../elements/MenuButton";
 
 async function Header(props) {
-
+    const [isActive, setIsActive] = useState(false);
+    
     return (
         <header className="navbar flex items-center w-full fixed inset-0 top-0 left-0 h-fit bg-white z-[1000]">
             <div className="container mx-auto">
@@ -24,6 +27,7 @@ async function Header(props) {
                             Products
                         </li>
                     </ul>
+                    {/* <MenuButton isActive={isActive} setIsActive={setIsActive} /> */}
                     <a className="xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2 block w-full max-w-[190px] md:max-w-[244px]" href="">
                         <Image priority className="w-full" src="/images/logo.png" width={244} height={30} />
                     </a>
