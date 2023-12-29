@@ -116,47 +116,6 @@ export const homepageSchema = defineType({
                     title: "Description",
                     type: "string",
                 },
-                {
-                    name: "products",
-                    title: "Products",
-                    type: "array",
-                    of: [
-                        {
-                            name: "product",
-                            title: "Product",
-                            type: "object",
-                            fields: [
-                                {
-                                    name: "content",
-                                    title: "Content",
-                                    type: "object",
-                                    fields: [
-                                        {
-                                            name: "title",
-                                            title: "Title",
-                                            type: "string",
-                                        },
-                                    ]
-                                },
-                                {
-                                    name: "image",
-                                    title: "Image",
-                                    type: "image",
-                                    options: {
-                                        hotspot: true,
-                                    },
-                                    fields: [
-                                        {
-                                            name: "alternative_text",
-                                            title: "Alternative Text",
-                                            type: "string",
-                                        }
-                                    ]
-                                }
-                            ]
-                        }
-                    ]
-                }
             ]
         }),
     ]

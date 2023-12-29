@@ -2,6 +2,7 @@ import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
 import schemas from "./sanity/schemas";
+// import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
 const config = defineConfig({
     projectId: '6t7lr4lh',

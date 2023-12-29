@@ -5,14 +5,14 @@ import OurProducts from "../elements/OurProducts";
 import CTA from "../global/CTA";
 
 function Homepage(props) {
-    const { homepage } = props;
+    const { homepage, products } = props;
 
     return (
         <>
             <Masthead {...homepage.masthead} />
             <ScrollableImage {...homepage.scrollable_image} />
             <ImageCarousel {...homepage.image_swiper} />
-            <OurProducts {...homepage.our_products} />
+            <OurProducts products={products} {...homepage.our_products} />
             {/* <CTA /> */}
         </>
     )

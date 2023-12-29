@@ -1,5 +1,6 @@
 import { clientConfig } from '@/sanity/config/client-config';
 import { createClient, groq } from "next-sanity";
+import { getProducts } from '@/sanity-utils';
 import Homepage from '@/components/pages/Homepage';
 
 async function fetchHomepageData() {
@@ -56,12 +57,13 @@ async function fetchHomepageData() {
 
 export default async function Home() {
   const data = await fetchHomepageData();
+  const products = await getProducts();
 
   const { homepage } = data;
 
   return (
     <main className="min-h-screen">
-        <Homepage homepage={homepage} />
+        <Homepage products={products} homepage={homepage} />
     </main>
   )
 }
