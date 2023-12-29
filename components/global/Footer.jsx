@@ -42,17 +42,17 @@ async function Footer() {
                             <nav>
                                 <ul className="text-center md:text-left">
                                     <li className="mb-7 font-semibold">Site</li>
-                                    <li className="mb-4"><a href="/">Home</a></li>
-                                    <li className="mb-4"><a href="/about">About</a></li>
-                                    <li className="mb-4"><a href="/gallery">Gallery</a></li>
-                                    <li className="mb-4"><a href="/contact">Contact</a></li>
+                                    <li className="mb-4 opacity-70 hover:opacity-100"><a href="/">Home</a></li>
+                                    <li className="mb-4 opacity-70 hover:opacity-100"><a href="/about">About</a></li>
+                                    <li className="mb-4 opacity-70 hover:opacity-100"><a href="/gallery">Gallery</a></li>
+                                    <li className="mb-4 opacity-70 hover:opacity-100"><a href="/contact">Contact</a></li>
                                 </ul>
                             </nav>
                             <nav>
                                 <ul className="text-center md:text-left">
                                     <li className="mb-7 font-semibold">Products</li>
                                     {products?.map((product, index) => (
-                                        <li className="mb-4" key={`product-nav-link-${index}`}>
+                                        <li className="mb-4 opacity-70 hover:opacity-100" key={`product-nav-link-${index}`}>
                                             <Link href={`/products/${product?.slug}`}>{product?.title}</Link>
                                         </li>
                                     ))}
@@ -61,8 +61,8 @@ async function Footer() {
                             <nav>
                                 <ul className="text-center md:text-left">
                                     <li className="mb-7 font-semibold">Social</li>
-                                    <li className="mb-4"><a href={`mailto:${footer?.contact_info?.email_address}`}>{footer?.contact_info?.email_address}</a></li>
-                                    <li className="mb-4"><a href={`tel:${footer?.contact_info?.phone_number.replace(/\s/g, '')}`}>{footer?.contact_info?.phone_number}</a></li>
+                                    <li className="mb-4 opacity-70 hover:opacity-100"><a href={`mailto:${footer?.contact_info?.email_address}`}>{footer?.contact_info?.email_address}</a></li>
+                                    <li className="mb-4 opacity-70 hover:opacity-100"><a href={`tel:${footer?.contact_info?.phone_number.replace(/\s/g, '')}`}>{footer?.contact_info?.phone_number}</a></li>
                                 </ul>
                             </nav>
                         </div>
