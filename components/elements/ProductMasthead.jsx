@@ -32,8 +32,8 @@ function ProductMasthead(props) {
                         </blockquote>
                         <div className="mt-10">
                             {product_content?.description.map((block, index) => (
-                                block?.children?.map((child, index) => (
-                                    <p className="text-lg mt-4 opacity-80 font-inter">{child.text}</p>
+                                block?.children?.map((child, i) => (
+                                    <p key={`content-block-${i}`} className="text-lg mt-4 opacity-80 font-inter">{child.text}</p>
                                 ))
                             ))}
                         </div>

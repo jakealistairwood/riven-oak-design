@@ -12,7 +12,7 @@ function ThreeColumnGrid({ products }) {
                 <h2 className="text-center mb-20" dangerouslySetInnerHTML={{ __html: "<span class='italic'>Other</span> Products" }} />
                 <div className="grid grid-cols-3 gap-7">
                     {products?.map((product, index) => (
-                        <Link href={`/products/${product.slug}`} className="px-10 py-7 flex flex-col overflow-hidden relative aspect-[523/392]">
+                        <Link key={`product-card-${index}`} href={`/products/${product.slug}`} className="px-10 py-7 flex flex-col overflow-hidden relative aspect-[523/392]">
                             <motion.div className="absolute inset-0" whileHover={{ scale: 1.1 }}>
                                 <Image fill={true} objectFit="cover" src={product?.featured_image?.asset?.url} alt={`${product?.title} Featured Image`} />
                             </motion.div>
