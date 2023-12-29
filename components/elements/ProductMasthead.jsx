@@ -20,7 +20,7 @@ function ProductMasthead(props) {
     return (
         <section>
             <div className="container" id="product-masthead">
-                <div className="grid gap-16 grid-cols-12 place-content-center pb-24">
+                <div className="flex flex-col lg:grid gap-8 lg:gap-16 lg:grid-cols-12 lg:place-content-center pb-24">
                     {/* <Swiper>
 
                     </Swiper> */}
@@ -33,11 +33,11 @@ function ProductMasthead(props) {
                         <div className="mt-10">
                             {product_content?.description.map((block, index) => (
                                 block?.children?.map((child, i) => (
-                                    <p key={`content-block-${i}`} className="text-lg mt-4 opacity-80 font-inter">{child.text}</p>
+                                    <p key={`content-block-${i}`} className="text-normal mt-4 opacity-80 font-inter">{child.text}</p>
                                 ))
                             ))}
                         </div>
-                        <Link className="bg-accent py-4 px-6 text-white text-lg mt-12 w-fit" href="mailto:jack@rivenoakdesign.com">
+                        <Link className="bg-accent py-4 px-6 text-white text-normal mt-12 w-fit" href="mailto:jack@rivenoakdesign.com">
                             Contact to Purchase
                         </Link>
                     </div>

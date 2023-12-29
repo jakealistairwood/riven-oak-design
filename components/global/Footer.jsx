@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
+
 import { clientConfig } from "@/sanity/config/client-config";
 import { createClient, groq } from "next-sanity";
+import { getProducts } from "@/sanity-utils";
 
 async function fetchFooterData() {
     const data = await createClient(clientConfig).fetch(
@@ -25,6 +28,8 @@ async function fetchFooterData() {
 
 async function Footer() {
     const data = await fetchFooterData();
+    const products = await getProducts();
+
     const { footer } = data;
 
     return (
@@ -46,9 +51,11 @@ async function Footer() {
                             <nav>
                                 <ul className="text-center md:text-left">
                                     <li className="mb-7 font-semibold">Products</li>
-                                    <li className="mb-4"><a href="">Gates</a></li>
-                                    <li className="mb-4"><a href="">Swing Seats</a></li>
-                                    <li className="mb-4"><a href="">Fences</a></li>
+                                    {products?.map((product, index) => (
+                                        <li className="mb-4" key={`product-nav-link-${index}`}>
+                                            <Link href={`/products/${product?.slug}`}>{product?.title}</Link>
+                                        </li>
+                                    ))}
                                 </ul>
                             </nav>
                             <nav>

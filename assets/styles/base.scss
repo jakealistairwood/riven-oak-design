@@ -17,6 +17,10 @@ h1 {
     @apply text-[2.25rem] md:text-[4rem] leading-[1.1];
 }
 
+p {
+    @apply leading-[1.4];
+}
+
 h2, p {
     @apply font-crimson-pro font-extralight;
 }

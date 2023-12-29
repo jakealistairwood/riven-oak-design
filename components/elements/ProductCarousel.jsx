@@ -34,7 +34,7 @@ function ProductCarousel({ productImages }) {
                 {productImages?.map((product, index) => (
                     <SwiperSlide key={`product-image-${index}`}>
                         <div className="relative aspect-[1/1]">
-                            <Image fill={true} objectFit="cover" src={product?.asset?.url} alt="" />
+                            <Image loading="lazy" fill={true} objectFit="cover" src={product?.asset?.url} alt="" />
                         </div>
                     </SwiperSlide>
                 ))}
