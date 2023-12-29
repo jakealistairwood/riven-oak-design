@@ -39,11 +39,11 @@ function ProductCarousel({ productImages }) {
                     </SwiperSlide>
                 ))}
                 {productImages.length > 1 && (
-                    <div className="flex items-center gap-[10px] absolute bottom-8 right-10 z-[2]">
-                        <motion.button whileTap={{ scale: 0.9 }} ref={prevButtonRef} className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center">
+                    <div className="flex items-center gap-[10px] absolute bottom-4 right-4 lg:bottom-8 lg:right-10 z-[2]">
+                        <motion.button whileTap={{ scale: 0.9 }} ref={prevButtonRef} className="w-[45px] h-[45px] lg:w-[60px] lg:h-[60px] bg-white rounded-full flex items-center justify-center">
                             <Image src="/images/arrow-left.svg" height={32} width={32} alt="" />
                         </motion.button>
-                        <motion.button whileTap={{ scale: 0.9 }} ref={nextButtonRef} className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center">
+                        <motion.button whileTap={{ scale: 0.9 }} ref={nextButtonRef} className="w-[45px] h-[45px] lg:w-[60px] lg:h-[60px] bg-white rounded-full flex items-center justify-center">
                             <Image src="/images/arrow-right.svg" height={32} width={32} alt="" />
                         </motion.button>
                     </div>

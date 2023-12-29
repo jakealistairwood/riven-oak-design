@@ -28,9 +28,9 @@ async function Header(props) {
                         </li>
                     </ul>
                     {/* <MenuButton isActive={isActive} setIsActive={setIsActive} /> */}
-                    <a className="xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2 block w-full max-w-[190px] md:max-w-[244px]" href="">
+                    <Link className="xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2 block w-full max-w-[190px] md:max-w-[244px]" href="/">
                         <Image priority className="w-full" src="/images/logo.png" width={244} height={30} />
-                    </a>
+                    </Link>
                     <ul className="hidden lg:flex items-center gap-x-4">
                         <li className="uppercase opacity-60 text-sm">
                             <Link href="https://facebook.com/rivenoakdesign">Facebook</Link>
