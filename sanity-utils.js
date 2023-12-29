@@ -48,7 +48,13 @@ export async function getProduct(slug) {
             _id,
             "slug": slug.current,
             title,
-            product_content
+            product_content{
+                description,
+                tagline,
+                gallery[]{
+                    asset->
+                }
+            }
           }`,
           { slug }
     )

@@ -25,7 +25,8 @@ h2 {
     @apply text-[3.125rem] md:text-[4rem];
 }
 
-#hero-masthead {
+#hero-masthead,
+#product-masthead {
     min-height: calc(100dvh - 94px);
     margin-top: 94px;
 

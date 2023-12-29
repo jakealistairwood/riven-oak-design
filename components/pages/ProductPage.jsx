@@ -1,16 +1,15 @@
-"use client";
+import ProductMasthead from "../elements/ProductMasthead";
+// import CTA from "../global/CTA";
 
-import { getProduct } from "@/sanity-utils";
+function ProductPage(props) {
 
-function ProductPage({ slug }) {
-
-    console.log(slug);
-
-    // const data = await getProduct(slug);
-    // console.log(data);
+    const { product, slug } = props;
 
     return (
-        <div className="min-h-screen"></div>
+        <>
+            <ProductMasthead {...product} />
+            {/* <CTA /> */}
+        </>
     )
 }
 

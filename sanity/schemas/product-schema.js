@@ -45,6 +45,7 @@ export const productType = defineType({
                     type: "array",
                     of: [
                         {
+                            name: "image",
                             type: "image"
                         }
                     ]
