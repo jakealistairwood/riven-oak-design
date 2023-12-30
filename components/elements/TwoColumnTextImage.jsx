@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image"
+import { PortableText } from "@portabletext/react";
 
 export default function TwoColumnTextImage(props) {
     const { content, image } = props;
@@ -8,7 +9,7 @@ export default function TwoColumnTextImage(props) {
     return (
         <section className="relative my-24">
             <div className="grid grid-cols-2 gap-28">
-                <div className="self-center container">
+                <div className="self-center container pl-[18%] prose">
                     {content?.map((block) => (
                         block?.children?.map((child, index) => (
                             <div dangerouslySetInnerHTML={{ __html: child?.text }} />

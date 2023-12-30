@@ -4,6 +4,10 @@
 
 @import "fonts";
 
+html {
+    scroll-behavior: smooth;
+}
+
 .container-lg {
     @apply max-w-[1440px] mx-auto;
 }
@@ -42,18 +46,21 @@ h2 {
 }
 
 #our-products {
-    grid-template-areas: 
-    "grid-area-1 grid-area-1 grid-area-1 grid-area-2 grid-area-2 grid-area-2"
-    "grid-area-1 grid-area-1 grid-area-1 grid-area-2 grid-area-2 grid-area-2"
-    "grid-area-3 grid-area-3 grid-area-4 grid-area-4 grid-area-4 grid-area-4"
-    "grid-area-5 grid-area-5 grid-area-4 grid-area-4 grid-area-4 grid-area-4";
-
-    @media screen and (max-width: 640px) {
-        grid-template-areas: unset;
-        grid-template-columns: 1fr;
-
-        .product-card {
-            grid-area: unset !important;
+    .products-container {
+        grid-template-areas: 
+        "grid-area-1 grid-area-1 grid-area-1 grid-area-2 grid-area-2 grid-area-2"
+        "grid-area-1 grid-area-1 grid-area-1 grid-area-2 grid-area-2 grid-area-2"
+        "grid-area-3 grid-area-3 grid-area-4 grid-area-4 grid-area-4 grid-area-4"
+        "grid-area-5 grid-area-5 grid-area-4 grid-area-4 grid-area-4 grid-area-4"
+        "grid-area-6 grid-area-6 grid-area-6 grid-area-7 grid-area-7 grid-area-7";
+        
+        @media screen and (max-width: 640px) {
+            grid-template-areas: unset;
+            grid-template-columns: 1fr;
+        
+            .product-card {
+                grid-area: unset !important;
+            }
         }
     }
 }

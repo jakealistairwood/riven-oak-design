@@ -37,9 +37,11 @@ export const aboutSchema = defineType({
                     name: "content",
                     title: "Content",
                     type: "array",
-                    of: [{
-                        type: "block"
-                    }]
+                    of: [
+                        {
+                            type: "block"
+                        }
+                    ]
                 },
                 {
                     name: "image",

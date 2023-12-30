@@ -1,20 +1,17 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 function Masthead({ heading, description, links, image }) {
-
-    console.log(links);
     
     return (
         <section className="w-11/12 mx-auto">
-            <div className="relative flex flex-col items-center text-white justify-center w-full" id="hero-masthead" style={{
-                backgroundImage: `url(${image?.asset?.url})`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-                backgroundPosition: "center center",
-            }}>
-                <div className="flex flex-col w-full max-w-[574px] text-center px-4">
+            <div className="relative flex flex-col items-center text-white justify-center w-full" id="hero-masthead">
+                <div className="h-full aspect-[1624/789]">
+                    <Image src={image?.asset?.url} objectFit="cover" fill={true} />
+                </div>
+                <div className="flex flex-col w-full max-w-[574px] text-center px-4 relative z-[2]">
                     <h1 className="font-fraunces" dangerouslySetInnerHTML={{ __html: heading }} />
                     <p className="text-xl opacity-80 mt-6" dangerouslySetInnerHTML={{ __html: description }} />
                     {links && <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
