@@ -29,19 +29,9 @@ h2 {
     @apply text-[3.125rem] md:text-[4rem];
 }
 
-#about-masthead {
-    height: calc(100dvh - 94px);
-    margin-top: 94px;
-    @apply w-11/12 mx-auto;
-
-    @media screen and (max-width: 1024px) {
-        height: calc(100dvh - 67px);
-        margin-top: 67px;
-    }
-}
-
 #hero-masthead,
-#product-masthead {
+#product-masthead,
+#about-masthead {
     min-height: calc(100dvh - 94px);
     margin-top: 94px;
 

@@ -27,6 +27,7 @@ module.exports = {
       colors: {
         "accent": "#CCA074",
         "dark-grey": "#2D3036",
+        "light-beige": "#F4F0EC",
       }
     },
   },
