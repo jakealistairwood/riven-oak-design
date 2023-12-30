@@ -62,3 +62,37 @@ export async function getProduct(slug) {
           { slug }
     )
 }
+
+export async function getAboutPage() {
+    return createClient(clientConfig).fetch(
+        groq`*[_type == "page" && slug.current == "about"][0] {
+            _id,
+            "slug": slug.current,
+            about_page {
+              two_column_text_image{
+                content,
+                image{
+                  asset->
+                }
+              },
+              about_masthead{
+                heading,
+                subheading,
+                image{
+                  asset->
+                }
+              },
+              three_column_grid{
+                section_heading,
+                grid_cards[]{
+                  description,
+                  title,
+                  image{
+                    asset->
+                  }
+                }
+              }
+            }
+          }`
+    )
+}

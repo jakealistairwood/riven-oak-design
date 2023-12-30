@@ -19,10 +19,27 @@ export const pageType = defineType({
                 maxLength: 96,
             }
         },
+        {
+            name: "choose_page_template",
+            title: "Choose Page Template",
+            type: "string",
+            options: {
+                list: [
+                  {title: 'Home', value: 'home'},
+                  {title: 'About', value: 'about'}
+                ],
+              }
+        },
         defineField({
             name: "homepage",
             type: "homepage",
+            hidden: ({ parent }) => parent?.choose_page_template !== "home"
         }),
+        defineField({
+            name: "about_page",
+            type: "about_page",
+            hidden: ({ parent }) => parent?.choose_page_template !== "about"
+        })
         // defineField({
         //     name: "pageBuilder",
         //     type: "array",
