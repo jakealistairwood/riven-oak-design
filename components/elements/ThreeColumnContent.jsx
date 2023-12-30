@@ -12,7 +12,7 @@ export default function ThreeColumnContent(props) {
                 {grid_cards && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {grid_cards?.map((card, index) => (
-                            <div className="flex flex-col">
+                            <div key={`grid-card-${index}`} className="flex flex-col">
                                 <div className="relative aspect-[519/605]">
                                     <Image className="grayscale duration-500 transition-all hover:grayscale-0" fill={true} objectFit="cover" src={card?.image?.asset?.url} alt="" />
                                 </div>

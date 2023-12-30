@@ -12,7 +12,7 @@ export default function TwoColumnTextImage(props) {
                 <div className="self-center container pl-[18%] prose">
                     {content?.map((block) => (
                         block?.children?.map((child, index) => (
-                            <div dangerouslySetInnerHTML={{ __html: child?.text }} />
+                            <div key={`content-block-${index}`} dangerouslySetInnerHTML={{ __html: child?.text }} />
                         ))
                     ))}
                 </div>
