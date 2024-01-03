@@ -70,6 +70,7 @@ export async function getAboutPage() {
             "slug": slug.current,
             about_page {
               two_column_text_image{
+                heading,
                 content,
                 image{
                   asset->
