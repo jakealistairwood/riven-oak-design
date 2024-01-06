@@ -18,7 +18,7 @@ export default function TwoColumnTextImage(props) {
                     ))}
                 </div>
                 <div className="relative max-w-[764px] aspect-[1/1]">
-                    <Image className="grayscale" fill={true} src={image?.asset?.url} objectFit="cover" />
+                    <Image className="grayscale" fill={true} src={image?.asset?.url} objectFit="cover" sizes="(max-width: 992px) 100vw, (max-width: 1440px) 600px, 800px" />
                 </div>
             </div>
         </section>

@@ -14,7 +14,7 @@ function ThreeColumnGrid({ products }) {
                     {products?.map((product, index) => (
                         <Link key={`product-card-${index}`} href={`/products/${product.slug}`} className="px-6 py-4 lg:px-10 lg:py-7 flex flex-col overflow-hidden relative aspect-[523/392]">
                             <motion.div className="absolute inset-0" whileHover={{ scale: 1.1 }}>
-                                <Image fill={true} objectFit="cover" src={product?.featured_image?.asset?.url} alt={`${product?.title} Featured Image`} />
+                                <Image fill={true} objectFit="cover" src={product?.featured_image?.asset?.url} alt={`${product?.title} Featured Image`} sizes="(max-width: 768px) 100vw, 500px" />
                             </motion.div>
                             <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                             <div className="mt-auto relative z-[2] text-white">

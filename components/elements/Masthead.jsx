@@ -13,7 +13,7 @@ function Masthead({ heading, description, links, image }) {
                 </div>
                 <div className="flex flex-col w-full max-w-[574px] text-center px-4 relative z-[2]">
                     <h1 className="font-fraunces" dangerouslySetInnerHTML={{ __html: heading }} />
-                    <p className="text-xl opacity-80 mt-6" dangerouslySetInnerHTML={{ __html: description }} />
+                    <p className="text-lg opacity-80 mt-6 font-extralight" dangerouslySetInnerHTML={{ __html: description }} />
                     {links && <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
                         {links?.map((link, index) => (
                             <Link key={`masthead-link-${index}`} className={`${link?.button_type === "primary" ? "bg-white text-dark-grey" : "border border-solid border-white hover:bg-white hover:text-dark-grey"} py-4 px-7 w-full sm:w-[unset]`} href={link?.link_url}>{link?.label}</Link>

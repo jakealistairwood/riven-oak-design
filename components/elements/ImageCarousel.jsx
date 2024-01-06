@@ -44,7 +44,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                         <header className="flex flex-col md:flex-row justify-between items-center md:items-start gap-y-10 text-center md:text-left w-full pb-16 border-b border-solid border-[#DEDEDE]">
                             <div className="flex flex-col w-full max-w-[560px]">
                                 <h2>{heading}</h2>
-                                <p className="mt-3 text-xl opacity-80">{description}</p>
+                                <p className="mt-8 text-lg font-extralight opacity-80">{description}</p>
                             </div>
                             <div className="flex items-center h-fit md:self-end gap-[10px]">
                                 <motion.button
@@ -75,8 +75,8 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                                                 {/* <small className="relative z-[2] text-white uppercase font-bold px-4 py-2 border border-solid border-white rounded-full w-fit">Step {index + 1}</small> */}
                                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                                 <div className="justify-end mt-auto text-white relative z-[2]">
-                                                    <h3 className="text-[1.8rem] font-inter font-normal mb-3">{item?.content?.title}</h3>
-                                                    <p className="opacity-90 text-xl">{item?.content?.description}</p>
+                                                    <h3 className="text-[1.8rem] font-normal mb-3">{item?.content?.title}</h3>
+                                                    <p className="opacity-90 text-lg font-extralight">{item?.content?.description}</p>
                                                 </div>
                                             </div>
                                         ) : (

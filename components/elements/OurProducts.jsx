@@ -26,7 +26,7 @@ function OurProducts({ heading, description, products }) {
             <div className="container mx-auto py-28">
                 <header className="section-header text-center max-w-[781px] w-full mx-auto">
                     <h2 dangerouslySetInnerHTML={{ __html: heading }} />
-                    <p className="opacity-80 text-xl pt-8 text-dark-grey" dangerouslySetInnerHTML={{ __html: description }} />
+                    <p className="opacity-80 text-lg font-extralight pt-8 text-dark-grey" dangerouslySetInnerHTML={{ __html: description }} />
                 </header>
                 <div className="mt-[120px] grid grid-cols-6 gap-5 products-container">
                     {products.map((product, index) => (

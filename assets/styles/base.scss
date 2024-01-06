@@ -25,7 +25,7 @@ p {
     @apply leading-[1.4];
 }
 
-h2, p {
+h2 {
     @apply font-crimson-pro font-extralight;
 }
 
@@ -43,6 +43,16 @@ h2 {
         min-height: calc(100dvh - 67px);
         margin-top: 67px;
     }
+}
+
+.sr-only {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
 }
 
 #our-products {
@@ -76,30 +86,50 @@ h2 {
 }
 
 .menu-btn {
-    height: 40px;
-    width: 100px;
-    border-radius: 25px;
-    background-color: red;
-    overflow: hidden;
-    position: relative;
     
-    &__slider {
+    &__burger {
+        width: 22.5px;
         position: relative;
+        pointer-events: none;
+        font-size: 12px;
+
+        &::after, &::before {
+            content: "";
+            height: 1px;
+            width: 100%;
+            background-color: black;
+            position: relative;
+            display: block;
+            transition: all 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+            transform-origin: center;
+        }
+
+        &::after {
+            top: -4px;
+        }
+        &::before {
+            top: 4px;
+        }
+
+        &--active {
+            &::after {
+                transform: rotate(45deg);
+                top: -1px;
+            }
+            &::before {
+                transform: rotate(-45deg);
+                top: 1px;
+            }
+        }
     }
 
-    &__el {
-        height: 100%;
-        width: 100%;
-        background-color: red;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        &:nth-of-type(2) {
-            position: absolute;
-            top: 100%;
-            background-color: black;
-            color: white;
+    &__label {
+        @apply uppercase;
+        p {
+            &:nth-of-type(2) {
+                position: absolute;
+                opacity: 0;
+            }
         }
     }
 }

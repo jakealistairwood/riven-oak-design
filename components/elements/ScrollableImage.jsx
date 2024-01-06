@@ -6,7 +6,7 @@ function ScrollableImage({ heading, description, gallery }) {
             <div className="container mx-auto py-28">
                 <header className="section-header text-center max-w-[781px] w-full mx-auto">
                     <h2 dangerouslySetInnerHTML={{ __html: heading }} />
-                    <p className="opacity-80 text-dark-grey text-xl pt-8" dangerouslySetInnerHTML={{ __html: description }} />
+                    <p className="opacity-80 text-dark-grey text-lg font-extralight pt-8" dangerouslySetInnerHTML={{ __html: description }} />
                 </header>
             </div>
         </section>

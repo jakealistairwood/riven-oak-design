@@ -32,7 +32,7 @@ async function CTA() {
             <div className="container">
                 <div className="flex flex-col text-center max-w-[650px] w-full mx-auto">
                     <h2 className="mb-10" dangerouslySetInnerHTML={{ __html: cta?.heading }} />
-                    <p className="text-xl text-dark-grey opacity-80">{cta?.description}</p>
+                    <p className="text-lg text-dark-grey opacity-80 font-extralight">{cta?.description}</p>
                     <a className="mt-16 transition-all duration-300 border border-solid border-accent hover:bg-accent hover:text-white text-accent px-11 py-4 w-fit mx-auto" href="mailto:jack@rivenoakdesign.com">
                         Get in Touch
                     </a>
