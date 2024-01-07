@@ -22,10 +22,10 @@ const AnimatedText = ({ tag, text, classNames }) => {
     const isInView = useInView(ref, { amount: 0.4, once: true });
 
     const animateText = (textToAnimate) => {
-        return textToAnimate.split(" ").map((word) => (
-            <span className="inline-block">
-                {word.split("").map((char) => (
-                    <motion.span className="inline-block" variants={defaultAnimations}>{char}</motion.span>
+        return textToAnimate.split(" ").map((word, i) => (
+            <span key={`animated-word-${indiex}`} className="inline-block">
+                {word.split("").map((char, j) => (
+                    <motion.span key={`animated-char-${j}`} className="inline-block" variants={defaultAnimations}>{char}</motion.span>
                 ))}
                 <span className="inline-block">&nbsp;</span>
             </span>

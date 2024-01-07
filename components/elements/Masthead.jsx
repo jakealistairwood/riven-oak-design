@@ -8,6 +8,9 @@ function Masthead({ heading, description, links, image }) {
     return (
         <section className="w-11/12 mx-auto">
             <div className="relative flex flex-col items-center text-white justify-center w-full" id="hero-masthead">
+                <div className="absolute inset-0" style={{
+                    background: "rgba(0, 0, 0, 0.7)"
+                }} />
                 <div className="h-full aspect-[1624/789]">
                     <Image src={image?.asset?.url} objectFit="cover" fill={true} />
                 </div>
