@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import MenuButton from "./MenuButton";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { getProducts } from "@/sanity-utils";
 
 const animateMobileMenu = {
@@ -25,6 +25,11 @@ const animateMobileMenu = {
 const NavbarWrapper = () => {
     const [isActive, setIsActive] = useState(false);
     const [productsActive, setProductsActive] = useState(false);
+
+    useEffect(() => {
+        setIsActive(false);
+        setProductsActive(false);
+    }, []);
 
     useEffect(() => {
         if (isActive) {
@@ -87,51 +92,65 @@ const NavbarWrapper = () => {
                         </ul>
                     </nav>
                 </div>
-                <motion.nav variants={animateMobileMenu} animate={isActive ? "open" : "closed"} className="relative bottom-0 overflow-hidden">
-                    <div className="container">
-                        <ul>
-                            <li className="border-b border-solid border-[#E8E8E8]">
-                                <Link onClick={() => setIsActive(false)} className="w-full block text-left pb-4 font-medium uppercase" href="/">Home</Link>
-                            </li>
-                            <li className="border-b border-solid border-[#E8E8E8]">
-                                <Link onClick={() => setIsActive(false)} className="w-full block text-left py-4 font-medium uppercase" href="/about">About</Link>
-                            </li>
-                            <li className="border-b border-solid border-[#E8E8E8] py-4">
-                                <button type="button" className="block w-full text-left" onClick={() => setProductsActive(!productsActive)}>
-                                    <Link className="w-full block text-left font-medium uppercase" href="/">Products</Link>
-                                </button>
-                                <motion.nav variants={animateMobileMenu} animate={productsActive ? "open" : "closed"} className="overflow-hidden">
-                                    <ul>
-                                        <li className="border-y border-solid border-[#E8E8E8] mt-4">
-                                            <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Garden Furniture</Link>
-                                        </li>
-                                        <li className="border-b border-solid border-[#E8E8E8]">
-                                            <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Timber</Link>
-                                        </li>
-                                        <li className="border-b border-solid border-[#E8E8E8]">
-                                            <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Garden Gates</Link>
-                                        </li>
-                                        <li className="border-b border-solid border-[#E8E8E8]">
-                                            <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Coppice Products</Link>
-                                        </li>
-                                        <li className="border-b border-solid border-[#E8E8E8]">
-                                            <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Fencing</Link>
-                                        </li>
-                                        <li className="border-b border-solid border-[#E8E8E8]">
-                                            <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Arches</Link>
-                                        </li>
-                                        <li>
-                                            <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left pt-4 pl-4">Benches</Link>
-                                        </li>
-                                    </ul>
-                                </motion.nav>
-                            </li>
-                            <li className="border-b border-solid border-[#E8E8E8]">
-                                <Link onClick={() => setIsActive(false)} className="w-full block text-left py-4 font-medium uppercase" href="/contact">Contact</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </motion.nav>
+                <AnimatePresence>
+                    <motion.nav variants={animateMobileMenu} animate={isActive ? "open" : "closed"} initial="initial" className="relative bottom-0 overflow-hidden">
+                        <div className="container">
+                            <ul>
+                                <li className="border-b border-solid border-[#E8E8E8]">
+                                    <Link onClick={() => setIsActive(false)} className="w-full block text-left pb-4 font-medium uppercase" href="/">Home</Link>
+                                </li>
+                                <li className="border-b border-solid border-[#E8E8E8]">
+                                    <Link onClick={() => setIsActive(false)} className="w-full block text-left py-4 font-medium uppercase" href="/about">About</Link>
+                                </li>
+                                <li className="border-b border-solid border-[#E8E8E8] py-4">
+                                    <button type="button" className="block w-full text-left" onClick={() => setProductsActive(!productsActive)}>
+                                        <Link className="w-full block text-left font-medium uppercase" href="/">Products</Link>
+                                    </button>
+                                    <motion.nav variants={animateMobileMenu} animate={productsActive ? "open" : "closed"} initial="inital" className="overflow-hidden">
+                                        <ul>
+                                            <li className="border-y border-solid border-[#E8E8E8] mt-4">
+                                                <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Garden Furniture</Link>
+                                            </li>
+                                            <li className="border-b border-solid border-[#E8E8E8]">
+                                                <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Timber</Link>
+                                            </li>
+                                            <li className="border-b border-solid border-[#E8E8E8]">
+                                                <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Garden Gates</Link>
+                                            </li>
+                                            <li className="border-b border-solid border-[#E8E8E8]">
+                                                <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Coppice Products</Link>
+                                            </li>
+                                            <li className="border-b border-solid border-[#E8E8E8]">
+                                                <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Fencing</Link>
+                                            </li>
+                                            <li className="border-b border-solid border-[#E8E8E8]">
+                                                <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left py-4 pl-4">Arches</Link>
+                                            </li>
+                                            <li>
+                                                <Link href="/products/garden-furniture" onClick={() => setIsActive(false)} className="w-full block text-left pt-4 pl-4">Benches</Link>
+                                            </li>
+                                        </ul>
+                                    </motion.nav>
+                                </li>
+                                <li className="border-b border-solid border-[#E8E8E8]">
+                                    <Link onClick={() => setIsActive(false)} className="w-full block text-left py-4 font-medium uppercase" href="/contact">Contact</Link>
+                                </li>
+                            </ul>
+                            <ul className="py-8">
+                                <div className="flex items-center gap-4">
+                                    <li className="uppercase opacity-60 text-sm">
+                                        <Link href="https://facebook.com/rivenoakdesign">
+                                            Facebook
+                                        </Link>
+                                    </li>
+                                    <li className="uppercase opacity-60 text-sm bg-white/10">
+                                        <Link href="https://x.com/rivenoakdesign">X</Link>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                    </motion.nav>
+                </AnimatePresence>
             </header>
             {isActive && <div className="fixed inset-0 bg-black opacity-50 z-[90]" />}
         </>
