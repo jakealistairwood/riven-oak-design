@@ -22,7 +22,7 @@ export const mastheadType = defineType({
                     name: "alt",
                     type: "string",
                     title: "Alternative Text",
-                })
+                }),
             ]
         }),
         defineField({

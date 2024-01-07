@@ -8,13 +8,13 @@ function Masthead({ heading, description, links, image }) {
     return (
         <section className="w-11/12 mx-auto">
             <div className="relative flex flex-col items-center text-white justify-center w-full" id="hero-masthead">
-                <div className="absolute inset-0" style={{
-                    background: "rgba(0, 0, 0, 0.7)"
-                }} />
+                {/* <div className="absolute inset-0 z-[2]" style={{
+                    background: "rgba(0, 0, 0, 0.5)"
+                }} /> */}
                 <div className="h-full aspect-[1624/789]">
                     <Image src={image?.asset?.url} objectFit="cover" fill={true} />
                 </div>
-                <div className="flex flex-col w-full max-w-[574px] text-center px-4 relative z-[2]">
+                <div className="flex flex-col w-full max-w-[574px] text-center px-4 relative z-[3]">
                     <h1 className="font-fraunces" dangerouslySetInnerHTML={{ __html: heading }} />
                     <p className="text-lg opacity-80 mt-6 font-extralight" dangerouslySetInnerHTML={{ __html: description }} />
                     {links && <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
