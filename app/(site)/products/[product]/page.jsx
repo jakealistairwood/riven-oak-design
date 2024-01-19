@@ -5,9 +5,7 @@ import ProductPage from "@/components/pages/ProductPage";
 import { useParams } from "next/navigation";
 
 export default async function Product({ params }) {
-    const { id } = useParams();
-    console.log(id);
-    console.log(params);
+    // const { id } = useParams();
     const products = await getProducts();
     const product = await getProduct(params.product);
     return <ProductPage products={products} product={product} slug={params.product} />

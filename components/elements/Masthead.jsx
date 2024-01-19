@@ -12,7 +12,7 @@ function Masthead({ heading, description, links, image }) {
                     background: "rgba(0, 0, 0, 0.5)"
                 }} /> */}
                 <div className="h-full aspect-[1624/789]">
-                    <Image src={image?.asset?.url} objectFit="cover" fill={true} />
+                    <Image priority src={image?.asset?.url} objectFit="cover" fill={true} />
                 </div>
                 <div className="flex flex-col w-full max-w-[574px] text-center px-4 relative z-[3]">
                     <h1 className="font-fraunces" dangerouslySetInnerHTML={{ __html: heading }} />

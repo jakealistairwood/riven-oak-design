@@ -18,6 +18,7 @@ module.exports = {
         "inter": ["Inter", "sans-serif"],
         "crimson-pro": ["Crimson Pro", "serif"],
         "fraunces": ["Fraunces", "serif"],
+        "instrument-serif": ["InstrumentSerif", "serif"],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

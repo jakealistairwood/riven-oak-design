@@ -45,18 +45,21 @@ const NavbarWrapper = () => {
                 <div className="container mx-auto">
                     <nav className="flex flex-row-reverse lg:flex-row items-center justify-between w-full relative py-6">
                         <ul className="hidden lg:flex items-center gap-x-4">
-                                <li className="uppercase opacity-60 text-sm">
+                                <li className="uppercase opacity-100 text-sm hover:underline underline-offset-4">
                                     <Link href="/">
                                         Home
                                     </Link>
                                 </li>
-                                <li className="uppercase opacity-60 text-sm">
+                                <li className="uppercase opacity-100 text-sm hover:underline underline-offset-4">
                                     <Link href="/about">
                                         About
                                     </Link>
                                 </li>
-                                <li className="uppercase opacity-60 text-sm">
+                                <li className="uppercase opacity-100 text-sm flex items-center gap-x-[6px] hover:underline underline-offset-4">
                                     Products
+                                    <div>
+                                        <Image src="/images/claret-down.svg" alt="" height={12} width={12} />
+                                    </div>
                                 </li>
                             </ul>
                         <MenuButton isActive={isActive} setIsActive={setIsActive} />

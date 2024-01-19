@@ -44,7 +44,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                         <header className="flex flex-col md:flex-row justify-between items-center md:items-start gap-y-10 text-center md:text-left w-full pb-16 border-b border-solid border-[#DEDEDE]">
                             <div className="flex flex-col w-full max-w-[560px]">
                                 <h2>{heading}</h2>
-                                <p className="mt-8 text-lg font-extralight opacity-80">{description}</p>
+                                <p className="mt-8 text-lg font-light opacity-80">{description}</p>
                             </div>
                             <div className="flex items-center h-fit md:self-end gap-[10px]">
                                 <motion.button
@@ -89,32 +89,6 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                             ))}
                     </Swiper>
                 </div>
-                {/* <div className={`grid grid-cols-5 gap-6 pt-16`}>
-                    {gallery?.map((item, index) => (
-                        <div key={index} className={`${activeIndex === index ? "aspect-[711/472]" : "aspect-[178/472] opacity-40"}`}>
-                            <img className="object-cover h-full" src={item?.image?.asset?.url} alt={item?.image?.asset?.alt} />
-                        </div>
-                    ))}
-                </div> */}
-                {/* <div className="overflow-visible mt-16">
-                    <Swiper 
-                        draggable 
-                        modules={[Navigation]} 
-                        navigation={{
-                            prevEl: prevButtonRef.current,
-                            nextEl: nextButtonRef.current,
-                        }} 
-                        onBeforeInit={(swiper) => {
-                            swiper.params.navigation.prevEl = prevButtonRef.current;
-                            swiper.params.navigation.nextEl = nextButtonRef.current;
-                       }}
-                        initialSlide={3} 
-                        spaceBetween={10} 
-                        slidesPerView={2} 
-                        centeredSlides
-                    >
-                    </Swiper>
-                </div> */}
             </div>
         </section>
     )
