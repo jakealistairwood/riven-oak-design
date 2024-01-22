@@ -22,26 +22,26 @@ const animateMobileMenu = {
     },
 };
 
-const NavbarWrapper = ({ products }) => {
+const NavbarWrapper = ({ products, globalData }) => {
     const [isActive, setIsActive] = useState(false);
     const [productsActive, setProductsActive] = useState(false);
     const [openDropdown, setOpenDropdown] = useState(false);
 
-    console.log(products);
+    const { footer } = globalData;
 
     useEffect(() => {
-        setIsActive(false);
-        setProductsActive(false);
+        // setIsActive(false);
+        // setProductsActive(false);
         setOpenDropdown(false);
     }, []);
 
     useEffect(() => {
-        if (isActive) {
+        if (isActive || openDropdown) {
             document.querySelector("body").classList.add("fixed", "inset-0");
         } else {
             document.querySelector("body").classList.remove("fixed", "inset-0");
         }
-    }, [isActive]);
+    }, [isActive, openDropdown]);
 
     return (
         <>
@@ -218,20 +218,17 @@ const NavbarWrapper = ({ products }) => {
                                     </Link>
                                 </li>
                             </ul>
-                            <ul className="py-8">
-                                <div className="flex items-center gap-4">
-                                    <li className="uppercase opacity-60 text-sm">
-                                        <Link href="https://facebook.com/rivenoakdesign">
-                                            Facebook
-                                        </Link>
-                                    </li>
-                                    <li className="uppercase opacity-60 text-sm bg-white/10">
-                                        <Link href="https://x.com/rivenoakdesign">
-                                            X
-                                        </Link>
-                                    </li>
-                                </div>
-                            </ul>
+                            <div className="py-8">
+                                <ul className="flex items-center gap-4">
+                                    {footer?.social_icons.length > 0 && (
+                                        footer?.social_icons?.map((icon, index) => (
+                                            <Link key={`social-icon-${index}`} href={icon?.url} className="h-[45px] w-[45px] rounded-full bg-[#F9F9F9] flex items-center justify-center">
+                                                 <img src={icon?.icon?.asset?.url} alt="social icon" />
+                                            </Link>
+                                        ))
+                                    )}
+                                </ul>
+                            </div>
                         </div>
                     </motion.nav>
                 </AnimatePresence>

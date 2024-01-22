@@ -21,7 +21,7 @@ export default function ThreeColumnContent(props) {
                                     <p className="mt-6 text-lg font-extralight">{card?.description}</p>
                                 </div>
                             </div>
-                        ))}
+                        ))} 
                     </div>
                 )}
             </div>

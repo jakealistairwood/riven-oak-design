@@ -19,8 +19,6 @@ const defaultAnimations = {
 
 const AnimatedText = ({ tag, text, classNames }) => {
 
-    console.log(text, tag);
-
     const ref = useRef(null);
     const isInView = useInView(ref, { amount: 0.4, once: true });
 

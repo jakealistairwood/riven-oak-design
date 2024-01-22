@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 function ThreeColumnGrid({ products }) {
-    console.log(products);
     return (
         <section className="bg-[#F4F0EC] py-24 mb-24">
             <div className="container">

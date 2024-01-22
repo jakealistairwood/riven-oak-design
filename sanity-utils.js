@@ -97,3 +97,23 @@ export async function getAboutPage() {
           }`
     )
 }
+
+export async function getFooterData() {
+    const data = await createClient(clientConfig).fetch(
+        groq`*[_type == "global_options"] {
+            footer{
+              contact_info{
+                email_address,
+                phone_number,
+              },
+              social_icons[]{
+                url,
+                icon{
+                  asset->
+                }
+              }
+            }
+        }`
+    )
+    return data[0];
+}
