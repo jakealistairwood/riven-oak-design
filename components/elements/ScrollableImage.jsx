@@ -1,5 +1,7 @@
 "use client";
 
+import AnimatedText from "./AnimatedText";
+
 function ScrollableImage({ heading, description, gallery }) {
     return (
         <section>

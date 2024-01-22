@@ -85,7 +85,7 @@ const NavbarWrapper = ({ products }) => {
                                 >
                                     <ul className="grid grid-cols-2 w-full p-10 gap-4">
                                         {products?.map((product, index) => (
-                                            <li className="">
+                                            <li className="" key={`product-dropdown-link-${index}`}>
                                                 <Link href={`/products/${product?.slug}` || ""} onClick={() => setOpenDropdown(false)} className="w-full block text-left opacity-70 duration-300 hover:opacity-100">{product?.title}</Link> 
                                             </li>
                                         ))}
@@ -174,7 +174,7 @@ const NavbarWrapper = ({ products }) => {
                                         <ul>
                                             {products?.map((product, index) => (
                                                 index === 0 ? (
-                                                    <li className="border-y border-solid border-[#E8E8E8] mt-4">
+                                                    <li key={`mobile-product-dropdown-link-${index}`} className="border-y border-solid border-[#E8E8E8] mt-4">
                                                         <Link
                                                             href={`/products/${product?.slug}`}
                                                             onClick={() =>
@@ -186,13 +186,13 @@ const NavbarWrapper = ({ products }) => {
                                                         </Link>
                                                     </li>
                                                 ) : index === products.length - 1 ? (
-                                                    <li className="">
+                                                    <li key={`mobile-product-dropdown-link-${index}`} className="">
                                                         <Link href={`/products/${product?.slug}`} onClick={() => setIsActive(false)} className="w-full block text-left pl-4 pt-4">
                                                             {product?.title}
                                                         </Link>
                                                     </li>
                                                 ) : (
-                                                    <li className="border-b border-solid border-[#E8E8E8]">
+                                                    <li key={`mobile-product-dropdown-link-${index}`} className="border-b border-solid border-[#E8E8E8]">
                                                         <Link
                                                             href={`/products/${product?.slug}`}
                                                             onClick={() =>
