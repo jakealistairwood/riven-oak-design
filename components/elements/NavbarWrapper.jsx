@@ -222,7 +222,7 @@ const NavbarWrapper = ({ products, globalData }) => {
                                 <ul className="flex items-center gap-4">
                                     {footer?.social_icons.length > 0 && (
                                         footer?.social_icons?.map((icon, index) => (
-                                            <Link key={`social-icon-${index}`} href={icon?.url} className="h-[45px] w-[45px] rounded-full bg-[#F9F9F9] flex items-center justify-center">
+                                            <Link key={`mobile-menu-social-icon-${index}`} href={icon?.url} className="h-[45px] w-[45px] rounded-full bg-[#F9F9F9] flex items-center justify-center">
                                                  <img src={icon?.icon?.asset?.url} alt="social icon" />
                                             </Link>
                                         ))
