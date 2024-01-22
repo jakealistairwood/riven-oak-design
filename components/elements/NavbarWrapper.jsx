@@ -32,6 +32,7 @@ const NavbarWrapper = ({ products }) => {
     useEffect(() => {
         setIsActive(false);
         setProductsActive(false);
+        setOpenDropdown(false);
     }, []);
 
     useEffect(() => {
