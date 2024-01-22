@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 function Masthead({ heading, description, links, image }) {
     
@@ -15,7 +16,7 @@ function Masthead({ heading, description, links, image }) {
                     <Image priority src={image?.asset?.url} objectFit="cover" fill={true} />
                 </div>
                 <div className="flex flex-col w-full max-w-[574px] text-center px-4 relative z-[3]">
-                    <h1 className="font-fraunces" dangerouslySetInnerHTML={{ __html: heading }} />
+                    <motion.h1 initial={{ scale: 0 }} animate={{ scale: 1, transition: { duration: 0.2 } }} className="font-fraunces" dangerouslySetInnerHTML={{ __html: heading }} />
                     <p className="text-lg opacity-80 mt-6 font-extralight" dangerouslySetInnerHTML={{ __html: description }} />
                     {links && <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
                         {links?.map((link, index) => (

@@ -81,7 +81,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                                             </div>
                                         ) : (
                                             <div className="w-auto opacity-50">
-                                                <Image className="h-full w-full object-cover" fill={true} src={item?.image?.asset?.url} alt={item?.image?.asset?.alt} sizes="(max-width: 992px) 100vw, 850px" />
+                                                <Image className="h-full w-full object-cover" quality={80} fill={true} src={item?.image?.asset?.url} alt={item?.image?.asset?.alt} sizes="(max-width: 992px) 100vw, 850px" />
                                             </div>
                                         )
                                     )}
