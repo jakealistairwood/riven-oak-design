@@ -11,7 +11,7 @@ export default function AboutMasthead({ heading, subheading, image }) {
                 </div>
                 <div className="flex flex-col text-center py-9 relative z-[2]">
                     <h1 className="text-[4rem] lg:text-[8rem] !font-fraunces tracking-tightest mb-4">{heading}</h1>
-                    <h2 className="max-w-[638px] text-[1.3rem] lg:text-[1.7rem] leading-[1.3] font-crimson-pro font-light">{subheading}</h2>
+                    <h2 className="max-w-[638px] text-[1.3rem] lg:text-[1.7rem] leading-[1.3] font-instrument-sans font-light">{subheading}</h2>
                 </div>
             </div>
         </section>

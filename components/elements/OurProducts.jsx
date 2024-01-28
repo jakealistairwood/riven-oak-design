@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const fadeInElement = {
     initial: {
@@ -31,15 +32,16 @@ function OurProducts({ heading, description, products }) {
                 <div className="mt-[120px] grid grid-cols-6 gap-5 products-container">
                     {products.map((product, index) => (
                         <motion.a key={`product-card-${index}`} variants={fadeInElement} custom={index} whileInView="animate" initial="initial" viewport={{ once: true }} href={`/products/${product.slug}`} className="relative product-card" style={{ gridArea: `grid-area-${index + 1}` }}>
-                            <div className="aspect-[1/1] flex flex-col justify-end p-6 lg:p-10 text-white" style={{
+                            <div className="aspect-[1/1] flex flex-col justify-end p-6 lg:p-10 text-white overflow-hidden group" style={{
                                 backgroundImage: `url(${product?.featured_image?.asset?.url})`,
                                 backgroundRepeat: "no-repeat",
                                 backgroundSize: "cover",
                             }}>
+                                {/* <Image src={product?.featured_image?.asset?.url} fill alt="" className="object-cover group-hover:scale-105 duration-200 ease-linear transition-transform" /> */}
                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                 <div className="relative z-[2]">
                                     <small className="text-sm lg:text-normal uppercase text-normal">Product</small>
-                                    <h3 className="text-[1.8rem] lg:text-[2rem] font-medium leading-[1.1]">{product?.title}</h3>
+                                    <h3 className="product-card__label lg:text-[2rem] font-medium leading-[1.1] text-inter">{product?.title}</h3>
                                 </div>
                             </div>
                         </motion.a>

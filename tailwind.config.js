@@ -16,9 +16,8 @@ module.exports = {
     extend: {
       fontFamily: {
         "inter": ["Inter", "sans-serif"],
-        "crimson-pro": ["Crimson Pro", "serif"],
-        "fraunces": ["Fraunces", "serif"],
         "instrument-serif": ["InstrumentSerif", "serif"],
+        "instrument-sans": ["InstrumentSans", "serif"],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -16,8 +16,6 @@ function ParallaxImages({ top_slider, bottom_slider }) {
     const x2 = useTransform(scrollYProgress, [0, 1], [0, -150])
     const height = useTransform(scrollYProgress, [0, 0.9], [50, 0])
 
-    console.log(top_slider, bottom_slider);
-
     return (
         <div className="relative overflow-hidden hidden md:flex flex-col gap-[1vw] mt-[160px]" ref={containerRef}>
             <motion.div className="flex items-center gap-[1vw] w-[120vw] -left-[10vw] relative" style={{ x: x1 }}>

@@ -12,21 +12,21 @@ html {
     @apply max-w-[1440px] mx-auto;
 }
 
-h1, h2, h3, h4 {
+body {
+    font-family: var(--instrument-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--instrument-serif) !important;
     @apply leading-[1.1];
 }
 
 h1 {
-    font-family: "Fraunces_9pt-Light", serif !important; 
-    @apply text-[2.25rem] md:text-[4rem] leading-[1.1];
+    @apply text-[2.25rem] md:text-[5rem] leading-[1];
 }
 
 p {
     @apply leading-[1.4];
-}
-
-h2 {
-    @apply font-crimson-pro font-extralight;
 }
 
 h2 {
@@ -42,6 +42,12 @@ h2 {
     @media screen and (max-width: 1024px) {
         min-height: calc(100dvh - 67px);
         margin-top: 67px;
+    }
+}
+
+#about-masthead {
+    h2 {
+        font-family: var(--instrument-sans) !important;
     }
 }
 
@@ -71,6 +77,12 @@ h2 {
             .product-card {
                 grid-area: unset !important;
             }
+        }
+    }
+
+    .product-card {
+        &__label {
+            font-family: var(--inter) !important;
         }
     }
 }

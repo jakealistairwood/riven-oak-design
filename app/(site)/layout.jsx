@@ -1,10 +1,12 @@
-import { Inter } from 'next/font/google'
+import { Inter, Instrument_Serif, Instrument_Sans } from 'next/font/google'
 import "../../assets/styles/base.scss";
 import Header from '@/components/global/Header'
 import Footer from '@/components/global/Footer';
 import CTA from '@/components/global/CTA';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: "--inter" });
+const instrumentSerif = Instrument_Serif({ subsets: ['latin'], weight: ["400"], variable: "--instrument-serif" });
+const instrumentSans = Instrument_Sans({ subsets: ['latin'], weight: ["400"], variable: "--instrument-sans" });
 
 export const metadata = {
   title: 'Riven Oak Design',
@@ -14,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${instrumentSans.variable} ${instrumentSerif.variable} ${inter.variable}`}>
         <Header />
         {children}
         <CTA />

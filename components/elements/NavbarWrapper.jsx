@@ -30,8 +30,8 @@ const NavbarWrapper = ({ products, globalData }) => {
     const { footer } = globalData;
 
     useEffect(() => {
-        // setIsActive(false);
-        // setProductsActive(false);
+        setIsActive(false);
+        setProductsActive(false);
         setOpenDropdown(false);
     }, []);
 
@@ -121,7 +121,7 @@ const NavbarWrapper = ({ products, globalData }) => {
                         </ul>
                     </nav>
                 </div>
-                <AnimatePresence>
+                <AnimatePresence layout>
                     <motion.nav
                         variants={animateMobileMenu}
                         animate={isActive ? "open" : "closed"}

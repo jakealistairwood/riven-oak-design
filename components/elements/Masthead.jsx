@@ -1,11 +1,22 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-// import { motion } from "framer-motion";
-// import AnimatedText from "./AnimatedText";
+import { useInView } from "react-intersection-observer";
+import { motion, useAnimation } from "framer-motion";
+import AnimatedText from "./AnimatedText";
 
 function Masthead({ heading, description, links, image }) {
+
+    const [ref, inView] = useInView();
+    const controls = useAnimation();
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        }
+    }, [controls, inView]);
     
     return (
         <section className="w-11/12 mx-auto">
@@ -15,16 +26,33 @@ function Masthead({ heading, description, links, image }) {
                 }} /> */}
                 <div className="h-full aspect-[1624/789]">
                     <Image priority src={image?.asset?.url} objectFit="cover" fill={true} />
+                    <div className="absolute inset-0 z-[2]" style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }} />
                 </div>
                 <div className="flex flex-col w-full max-w-[574px] text-center px-4 relative z-[3]">
-                    {/* <AnimatedText tag="h1" text={heading} /> */}
-                    <h1 className="font-fraunces" dangerouslySetInnerHTML={{ __html: heading }} />
-                    <p className="text-lg opacity-80 mt-6 font-extralight" dangerouslySetInnerHTML={{ __html: description }} />
-                    {links && <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
-                        {links?.map((link, index) => (
-                            <Link key={`masthead-link-${index}`} className={`${link?.button_type === "primary" ? "bg-white text-dark-grey" : "border border-solid border-white hover:bg-white hover:text-dark-grey"} py-4 px-7 w-full sm:w-[unset]`} href={link?.link_url}>{link?.label}</Link>
-                        ))}
-                    </div>}
+                    <h1 className="">
+                        <AnimatedText text={heading} />
+                    </h1>
+                    <motion.div
+                        className="mt-6"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 1.2,
+                            ease: [0.6, 0.01, 0.05, 1],
+                            delay: 0.4
+                        }}
+                    >
+                        <p
+                            className="text-lg opacity-80 font-extralight" 
+                            dangerouslySetInnerHTML={{ __html: description }} 
+                        />
+                        {links && <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-12">
+                            {links?.map((link, index) => (
+                                <Link key={`masthead-link-${index}`} className={`${link?.button_type === "primary" ? "bg-white text-dark-grey" : "border border-solid border-white/30 hover:bg-white hover:text-dark-grey"} py-4 px-7 w-full sm:w-[unset] transition-all duration-200 ease-linear`} href={link?.link_url}>{link?.label}</Link>
+                            ))}
+                        </div>}
+                    </motion.div>
                 </div>
             </div>
         </section>

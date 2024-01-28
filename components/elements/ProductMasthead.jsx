@@ -10,17 +10,12 @@ import Link from "next/link";
 
 
 function ProductMasthead(props) {
-
-    console.log(props);
-
     const { title, product_content } = props;
-
-    console.log(product_content);
 
     return (
         <section>
             <div className="container" id="product-masthead">
-                <div className="flex flex-col lg:grid gap-8 lg:gap-16 lg:grid-cols-12 lg:place-content-center pb-24">
+                <div className="flex flex-col lg:grid gap-8 lg:gap-16 lg:grid-cols-12 pb-24">
                     {/* <Swiper>
 
                     </Swiper> */}

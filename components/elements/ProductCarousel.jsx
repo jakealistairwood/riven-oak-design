@@ -17,7 +17,7 @@ function ProductCarousel({ productImages }) {
     const nextButtonRef = useRef(null);
 
     return (
-        <div className="col-span-7 relative">
+        <div className="col-span-7 sticky top-0">
             <Swiper
                 slidesPerView={1}
                 modules={[EffectFade, Navigation]}
