@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import AnimatedText from "./AnimatedText";
 
 const animateAccordion = {
     initial: {
@@ -28,13 +29,27 @@ const animateAccordion = {
 const Accordion = ({ description, heading, gallery }) => {
     return (
         <section className="bg-[#F6F6F6] py-24">
-            <div className="container w-1/2 mx-auto">
+            <div className="container w-full  sm:w-4/5 lg:w-1/2 mx-auto">
                 <header className="flex flex-col md:flex-row justify-center items-center gap-y-10 text-center w-full pb-16">
                     <div className="flex flex-col w-full max-w-[560px]">
-                        <h2>{heading}</h2>
-                        <p className="mt-8 text-lg font-light opacity-80">
+                        {heading && (
+                            <h2>
+                                <AnimatedText text={heading} />
+                            </h2>
+                        )}
+                        <motion.p 
+                            className="mt-8 text-lg font-light opacity-80"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 1.2,
+                                ease: [0.6, 0.01, 0.05, 1],
+                                delay: 0.4
+                            }}
+                        >
                             {description}
-                        </p>
+                        </motion.p>
                     </div>
                 </header>
                 <div className="flex flex-col">
@@ -103,7 +118,7 @@ const AccordionItem = ({ index, accordion_content }) => {
                         className="object-cover"
                     />
                 </div>
-                <p dangerouslySetInnerHTML={{ __html: content?.description }} />
+                <p className="my-10 text-left px-8" dangerouslySetInnerHTML={{ __html: content?.description }} />
             </motion.div>
         </button>
     );

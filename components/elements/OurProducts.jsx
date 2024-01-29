@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import AnimatedText from "./AnimatedText";
 
 const fadeInElement = {
     initial: {
@@ -26,8 +27,22 @@ function OurProducts({ heading, description, products }) {
         <section id="our-products">
             <div className="container mx-auto py-28">
                 <header className="section-header text-center max-w-[781px] w-full mx-auto">
-                    <h2 dangerouslySetInnerHTML={{ __html: heading }} />
-                    <p className="opacity-80 text-lg font-extralight pt-8 text-dark-grey" dangerouslySetInnerHTML={{ __html: description }} />
+                    {/* <h2 dangerouslySetInnerHTML={{ __html: heading }} /> */}
+                    <h2>
+                        <AnimatedText text={heading} />
+                    </h2>
+                    <motion.p 
+                        className="opacity-80 text-lg font-extralight pt-8 text-dark-grey" 
+                        dangerouslySetInnerHTML={{ __html: description }} 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 1.2,
+                            ease: [0.6, 0.01, 0.05, 1],
+                            delay: 0.4
+                        }}
+                    />
                 </header>
                 <div className="mt-[120px] grid grid-cols-6 gap-5 products-container">
                     {products.map((product, index) => (

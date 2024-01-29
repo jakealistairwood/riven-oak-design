@@ -1,6 +1,7 @@
 "use client";
 
 import AnimatedText from "./AnimatedText";
+import { motion } from "framer-motion";
 
 function ScrollableImage({ heading, description, gallery }) {
     return (
@@ -11,7 +12,18 @@ function ScrollableImage({ heading, description, gallery }) {
                         <AnimatedText text={heading} />
                     </h2>
                     {/* <h2 dangerouslySetInnerHTML={{ __html: heading }} /> */}
-                    <p className="opacity-80 text-dark-grey text-lg font-extralight pt-8 text-balance" dangerouslySetInnerHTML={{ __html: description }} />
+                    <motion.p 
+                        className="opacity-80 text-dark-grey text-lg font-extralight pt-8 text-balance" 
+                        dangerouslySetInnerHTML={{ __html: description }} 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 1.2,
+                            ease: [0.6, 0.01, 0.05, 1],
+                            delay: 0.4
+                        }}
+                    />
                 </header>
             </div>
         </section>

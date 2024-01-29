@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import AnimatedText from "./AnimatedText";
 
 export default function ThreeColumnContent(props) {
     console.log(props);
@@ -8,7 +9,11 @@ export default function ThreeColumnContent(props) {
     return (
         <section className="bg-light-beige py-24 mb-24">
             <div className="container">
-                <h2 className="mb-24 text-center">{section_heading}</h2>
+                {section_heading && (
+                    <h2 className="mb-24 text-center">
+                        <AnimatedText text={section_heading} />
+                    </h2>
+                )}
                 {grid_cards && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {grid_cards?.map((card, index) => (
