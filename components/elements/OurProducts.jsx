@@ -45,7 +45,7 @@ function OurProducts({ heading, description, products }) {
                     />
                 </header>
                 <div className="mt-[120px] grid grid-cols-6 gap-5 products-container">
-                    {products.map((product, index) => (
+                    {products && products?.map((product, index) => (
                         <motion.a key={`product-card-${index}`} variants={fadeInElement} custom={index} whileInView="animate" initial="initial" viewport={{ once: true }} href={`/products/${product.slug}`} className="relative product-card" style={{ gridArea: `grid-area-${index + 1}` }}>
                             <div className="aspect-[1/1] flex flex-col justify-end p-6 lg:p-10 text-white overflow-hidden group" style={{
                                 backgroundImage: `url(${product?.featured_image?.asset?.url})`,

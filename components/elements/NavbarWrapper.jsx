@@ -24,24 +24,24 @@ const animateMobileMenu = {
 
 const NavbarWrapper = ({ products, globalData }) => {
     const [isActive, setIsActive] = useState(false);
-    const [productsActive, setProductsActive] = useState(false);
-    const [openDropdown, setOpenDropdown] = useState(false);
+    // const [productsActive, setProductsActive] = useState(false);
+    // const [openDropdown, setOpenDropdown] = useState(false);
 
     const { footer } = globalData;
 
     useEffect(() => {
         setIsActive(false);
-        setProductsActive(false);
-        setOpenDropdown(false);
+        // setProductsActive(false);
+        // setOpenDropdown(false);
     }, []);
 
     useEffect(() => {
-        if (isActive || openDropdown) {
+        if (isActive) {
             document.querySelector("body").classList.add("fixed", "inset-0");
         } else {
             document.querySelector("body").classList.remove("fixed", "inset-0");
         }
-    }, [isActive, openDropdown]);
+    }, [isActive]);
 
     return (
         <>
@@ -56,7 +56,8 @@ const NavbarWrapper = ({ products, globalData }) => {
                                 <Link href="/about">About</Link>
                             </li>
                             <li className="uppercase opacity-100 text-sm hover:underline underline-offset-4 relative">
-                                <button
+                                <Link href="/products">Products</Link>
+                                {/* <button
                                     onClick={() =>
                                         setOpenDropdown(!openDropdown)
                                     }
@@ -73,8 +74,8 @@ const NavbarWrapper = ({ products, globalData }) => {
                                             width={12}
                                         />
                                     </div>
-                                </button>
-                                <motion.nav
+                                </button> */}
+                                {/* <motion.nav
                                     animate={openDropdown ? "open" : "closed"}
                                     variants={animateMobileMenu}
                                     className={`${
@@ -90,7 +91,7 @@ const NavbarWrapper = ({ products, globalData }) => {
                                             </li>
                                         ))}
                                     </ul>
-                                </motion.nav>
+                                </motion.nav> */}
                             </li>
                         </ul>
                         <MenuButton
@@ -121,122 +122,132 @@ const NavbarWrapper = ({ products, globalData }) => {
                         </ul>
                     </nav>
                 </div>
-                <AnimatePresence layout>
-                    <motion.nav
-                        variants={animateMobileMenu}
-                        animate={isActive ? "open" : "closed"}
-                        initial="initial"
-                        className="relative bottom-0 overflow-hidden"
-                    >
-                        <div className="container">
-                            <ul>
-                                <li className="border-b border-solid border-[#E8E8E8]">
+                <motion.nav
+                    variants={animateMobileMenu}
+                    animate={isActive ? "open" : "closed"}
+                    initial="initial"
+                    className="relative bottom-0 overflow-hidden"
+                >
+                    <div className="container">
+                        <ul>
+                            <li className="border-b border-solid border-[#E8E8E8]">
+                                <Link
+                                    onClick={() => setIsActive(false)}
+                                    className="w-full block text-left pb-4 font-medium uppercase"
+                                    href="/"
+                                >
+                                    Home
+                                </Link>
+                            </li>
+                            <li className="border-b border-solid border-[#E8E8E8]">
+                                <Link
+                                    onClick={() => setIsActive(false)}
+                                    className="w-full block text-left py-4 font-medium uppercase"
+                                    href="/about"
+                                >
+                                    About
+                                </Link>
+                            </li>
+                            <li className="border-b border-solid border-[#E8E8E8] py-4">
+                                <Link
+                                    onClick={() => setIsActive(false)}
+                                    className="w-full block text-left py-4 font-medium uppercase"
+                                    href="/about"
+                                >
+                                    Product
+                                </Link>
+                                {/* <button
+                                    type="button"
+                                    className="block w-full text-left"
+                                    onClick={() =>
+                                        setProductsActive(!productsActive)
+                                    }
+                                >
                                     <Link
-                                        onClick={() => setIsActive(false)}
-                                        className="w-full block text-left pb-4 font-medium uppercase"
+                                        className="w-full block text-left font-medium uppercase"
                                         href="/"
                                     >
-                                        Home
+                                        Products
                                     </Link>
-                                </li>
-                                <li className="border-b border-solid border-[#E8E8E8]">
-                                    <Link
-                                        onClick={() => setIsActive(false)}
-                                        className="w-full block text-left py-4 font-medium uppercase"
-                                        href="/about"
-                                    >
-                                        About
-                                    </Link>
-                                </li>
-                                <li className="border-b border-solid border-[#E8E8E8] py-4">
-                                    <button
-                                        type="button"
-                                        className="block w-full text-left"
-                                        onClick={() =>
-                                            setProductsActive(!productsActive)
-                                        }
-                                    >
+                                </button> */}
+                                {/* <motion.nav
+                                    variants={animateMobileMenu}
+                                    animate={
+                                        productsActive ? "open" : "closed"
+                                    }
+                                    initial="inital"
+                                    className="overflow-hidden"
+                                >
+                                    <ul>
+                                        {products?.map((product, index) => (
+                                            index === 0 ? (
+                                                <li key={`mobile-product-dropdown-link-${index}`} className="border-y border-solid border-[#E8E8E8] mt-4">
+                                                    <Link
+                                                        href={`/products/${product?.slug}`}
+                                                        onClick={() =>
+                                                            setIsActive(false)
+                                                        }
+                                                        className="w-full block text-left py-4 pl-4"
+                                                    >
+                                                        {product?.title}
+                                                    </Link>
+                                                </li>
+                                            ) : index === products.length - 1 ? (
+                                                <li key={`mobile-product-dropdown-link-${index}`} className="">
+                                                    <Link href={`/products/${product?.slug}`} onClick={() => setIsActive(false)} className="w-full block text-left pl-4 pt-4">
+                                                        {product?.title}
+                                                    </Link>
+                                                </li>
+                                            ) : (
+                                                <li key={`mobile-product-dropdown-link-${index}`} className="border-b border-solid border-[#E8E8E8]">
+                                                    <Link
+                                                        href={`/products/${product?.slug}`}
+                                                        onClick={() =>
+                                                            setIsActive(false)
+                                                        }
+                                                        className="w-full block text-left py-4 pl-4"
+                                                    >
+                                                        {product?.title}
+                                                    </Link>
+                                                </li>
+                                            )
+                                        ))}
+                                    </ul>
+                                </motion.nav> */}
+                            </li>
+                            <li className="border-b border-solid border-[#E8E8E8]">
+                                <Link
+                                    onClick={() => setIsActive(false)}
+                                    className="w-full block text-left py-4 font-medium uppercase"
+                                    href="/contact"
+                                >
+                                    Contact
+                                </Link>
+                            </li>
+                        </ul>
+                        <div className="py-8">
+                            <ul className="flex items-center gap-4">
+                                {footer?.social_icons.length > 0 &&
+                                    footer?.social_icons?.map((icon, index) => (
                                         <Link
-                                            className="w-full block text-left font-medium uppercase"
-                                            href="/"
+                                            key={`mobile-menu-social-icon-${index}`}
+                                            href={icon?.url}
+                                            className="h-[45px] w-[45px] rounded-full bg-[#F9F9F9] flex items-center justify-center"
                                         >
-                                            Products
+                                            <img
+                                                src={icon?.icon?.asset?.url}
+                                                alt="social icon"
+                                            />
                                         </Link>
-                                    </button>
-                                    <motion.nav
-                                        variants={animateMobileMenu}
-                                        animate={
-                                            productsActive ? "open" : "closed"
-                                        }
-                                        initial="inital"
-                                        className="overflow-hidden"
-                                    >
-                                        <ul>
-                                            {products?.map((product, index) => (
-                                                index === 0 ? (
-                                                    <li key={`mobile-product-dropdown-link-${index}`} className="border-y border-solid border-[#E8E8E8] mt-4">
-                                                        <Link
-                                                            href={`/products/${product?.slug}`}
-                                                            onClick={() =>
-                                                                setIsActive(false)
-                                                            }
-                                                            className="w-full block text-left py-4 pl-4"
-                                                        >
-                                                            {product?.title}
-                                                        </Link>
-                                                    </li>
-                                                ) : index === products.length - 1 ? (
-                                                    <li key={`mobile-product-dropdown-link-${index}`} className="">
-                                                        <Link href={`/products/${product?.slug}`} onClick={() => setIsActive(false)} className="w-full block text-left pl-4 pt-4">
-                                                            {product?.title}
-                                                        </Link>
-                                                    </li>
-                                                ) : (
-                                                    <li key={`mobile-product-dropdown-link-${index}`} className="border-b border-solid border-[#E8E8E8]">
-                                                        <Link
-                                                            href={`/products/${product?.slug}`}
-                                                            onClick={() =>
-                                                                setIsActive(false)
-                                                            }
-                                                            className="w-full block text-left py-4 pl-4"
-                                                        >
-                                                            {product?.title}
-                                                        </Link>
-                                                    </li>
-                                                )
-                                            ))}
-                                        </ul>
-                                    </motion.nav>
-                                </li>
-                                <li className="border-b border-solid border-[#E8E8E8]">
-                                    <Link
-                                        onClick={() => setIsActive(false)}
-                                        className="w-full block text-left py-4 font-medium uppercase"
-                                        href="/contact"
-                                    >
-                                        Contact
-                                    </Link>
-                                </li>
+                                    ))}
                             </ul>
-                            <div className="py-8">
-                                <ul className="flex items-center gap-4">
-                                    {footer?.social_icons.length > 0 && (
-                                        footer?.social_icons?.map((icon, index) => (
-                                            <Link key={`mobile-menu-social-icon-${index}`} href={icon?.url} className="h-[45px] w-[45px] rounded-full bg-[#F9F9F9] flex items-center justify-center">
-                                                 <img src={icon?.icon?.asset?.url} alt="social icon" />
-                                            </Link>
-                                        ))
-                                    )}
-                                </ul>
-                            </div>
                         </div>
-                    </motion.nav>
-                </AnimatePresence>
+                    </div>
+                </motion.nav>
             </header>
-            {isActive ||
-                (openDropdown && (
-                    <div className="fixed inset-0 bg-black opacity-50 z-[90]" />
-                ))}
+            {isActive && (
+                <div className="fixed inset-0 bg-black opacity-50 z-[90]" />
+            )}
         </>
     );
 };

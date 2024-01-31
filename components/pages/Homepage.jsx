@@ -15,7 +15,7 @@ function Homepage(props) {
             <Accordion {...homepage.image_swiper} />
             {/* <ImageCarousel {...homepage.image_swiper} /> */}
             <OurProducts products={products} {...homepage.our_products} />
-            {/* <CTA /> */}
+            <CTA />
         </>
     )
 }

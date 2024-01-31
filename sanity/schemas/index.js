@@ -4,6 +4,7 @@ import { globalOptions } from "./globalOptions-schema";
 import { mastheadType } from "./mastheadType-schema";
 import { homepageSchema } from "./homePage-schema";
 import { aboutSchema } from "./aboutPage-schema";
+import { contactSchema } from "./contactPage-schema";
 
 const schemas = [
     pageType,
@@ -11,6 +12,7 @@ const schemas = [
     globalOptions,
     homepageSchema,
     aboutSchema,
+    contactSchema,
     mastheadType,
 ]
 

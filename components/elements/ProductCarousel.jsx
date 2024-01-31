@@ -35,9 +35,9 @@ function ProductCarousel({ productImages }) {
                     <SwiperSlide key={`product-image-${index}`}>
                         <div className="relative aspect-[1/1]">
                             {index === 0 ? (
-                                <Image priority fill={true} objectFit="cover" src={product?.asset?.url} alt="" />
+                                <Image priority fill={true} objectFit="cover" src={product?.asset?.url} alt="" quality={80} sizes="(max-width: 768px) 100vw, 800px" />
                             ) : (
-                                <Image loading="lazy" fill={true} objectFit="cover" src={product?.asset?.url} alt="" />
+                                <Image loading="lazy" fill={true} objectFit="cover" src={product?.asset?.url} alt="" quality={80} sizes="(max-width: 768px) 100vw, 800px" />
                             )}
                         </div>
                     </SwiperSlide>

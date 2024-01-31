@@ -26,7 +26,8 @@ export const pageType = defineType({
             options: {
                 list: [
                   {title: 'Home', value: 'home'},
-                  {title: 'About', value: 'about'}
+                  {title: 'About', value: 'about'},
+                  {title: 'Contact', value: 'contact'},
                 ],
               }
         },
@@ -39,7 +40,12 @@ export const pageType = defineType({
             name: "about_page",
             type: "about_page",
             hidden: ({ parent }) => parent?.choose_page_template !== "about"
-        })
+        }),
+        defineField({
+            name: "contact_page",
+            type: "contact_page",
+            hidden: ({ parent }) => parent?.choose_page_template !== "contact"
+        }),
         // defineField({
         //     name: "pageBuilder",
         //     type: "array",
