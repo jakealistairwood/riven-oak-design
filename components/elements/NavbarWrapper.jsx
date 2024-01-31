@@ -50,13 +50,13 @@ const NavbarWrapper = ({ products, globalData }) => {
                     <nav className="flex flex-row-reverse lg:flex-row items-center justify-between w-full relative py-6">
                         <ul className="hidden lg:flex items-center gap-x-4">
                             <li className="uppercase opacity-100 text-sm hover:underline underline-offset-4">
-                                <Link href="/">Home</Link>
+                                <a href="/">Home</a>
                             </li>
                             <li className="uppercase opacity-100 text-sm hover:underline underline-offset-4">
-                                <Link href="/about">About</Link>
+                                <a href="/about">About</a>
                             </li>
                             <li className="uppercase opacity-100 text-sm hover:underline underline-offset-4 relative">
-                                <Link href="/products">Products</Link>
+                                <a href="/products">Products</a>
                                 {/* <button
                                     onClick={() =>
                                         setOpenDropdown(!openDropdown)
@@ -98,7 +98,7 @@ const NavbarWrapper = ({ products, globalData }) => {
                             isActive={isActive}
                             setIsActive={setIsActive}
                         />
-                        <Link
+                        <a
                             className="xl:absolute xl:left-1/2 xl:top-1/2 xl:-translate-x-1/2 xl:-translate-y-1/2 block w-full max-w-[190px] md:max-w-[244px]"
                             href="/"
                         >
@@ -109,7 +109,7 @@ const NavbarWrapper = ({ products, globalData }) => {
                                 width={244}
                                 height={30}
                             />
-                        </Link>
+                        </a>
                         <ul className="hidden lg:flex items-center gap-x-4">
                             <li className="uppercase text-sm border border-solid border-accent text-accent">
                                 <a
@@ -131,31 +131,31 @@ const NavbarWrapper = ({ products, globalData }) => {
                     <div className="container">
                         <ul>
                             <li className="border-b border-solid border-[#E8E8E8]">
-                                <Link
+                                <a
                                     onClick={() => setIsActive(false)}
                                     className="w-full block text-left pb-4 font-medium uppercase"
                                     href="/"
                                 >
                                     Home
-                                </Link>
+                                </a>
                             </li>
                             <li className="border-b border-solid border-[#E8E8E8]">
-                                <Link
+                                <a
                                     onClick={() => setIsActive(false)}
                                     className="w-full block text-left py-4 font-medium uppercase"
                                     href="/about"
                                 >
                                     About
-                                </Link>
+                                </a>
                             </li>
                             <li className="border-b border-solid border-[#E8E8E8] py-4">
-                                <Link
+                                <a
                                     onClick={() => setIsActive(false)}
                                     className="w-full block text-left py-4 font-medium uppercase"
                                     href="/about"
                                 >
                                     Product
-                                </Link>
+                                </a>
                                 {/* <button
                                     type="button"
                                     className="block w-full text-left"
@@ -216,20 +216,20 @@ const NavbarWrapper = ({ products, globalData }) => {
                                 </motion.nav> */}
                             </li>
                             <li className="border-b border-solid border-[#E8E8E8]">
-                                <Link
+                                <a
                                     onClick={() => setIsActive(false)}
                                     className="w-full block text-left py-4 font-medium uppercase"
                                     href="/contact"
                                 >
                                     Contact
-                                </Link>
+                                </a>
                             </li>
                         </ul>
                         <div className="py-8">
                             <ul className="flex items-center gap-4">
                                 {footer?.social_icons.length > 0 &&
                                     footer?.social_icons?.map((icon, index) => (
-                                        <Link
+                                        <a
                                             key={`mobile-menu-social-icon-${index}`}
                                             href={icon?.url}
                                             className="h-[45px] w-[45px] rounded-full bg-[#F9F9F9] flex items-center justify-center"
@@ -238,7 +238,7 @@ const NavbarWrapper = ({ products, globalData }) => {
                                                 src={icon?.icon?.asset?.url}
                                                 alt="social icon"
                                             />
-                                        </Link>
+                                        </a>
                                     ))}
                             </ul>
                         </div>

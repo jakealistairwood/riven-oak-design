@@ -49,7 +49,7 @@ function Masthead({ heading, description, links, image }) {
                         />
                         {links && <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6">
                             {links?.map((link, index) => (
-                                <Link key={`masthead-link-${index}`} className={`${link?.button_type === "primary" ? "bg-white text-dark-grey" : "border border-solid border-white/30 hover:bg-white hover:text-dark-grey"} py-[10px] rounded-lg px-7 w-full sm:w-[unset] transition-all duration-200 ease-linear`} href={link?.link_url}>{link?.label}</Link>
+                                <a key={`masthead-link-${index}`} className={`${link?.button_type === "primary" ? "bg-white text-dark-grey" : "border border-solid border-white/30 hover:bg-white hover:text-dark-grey"} py-[10px] rounded-lg px-7 w-full sm:w-[unset] transition-all duration-200 ease-linear`} href={link?.link_url}>{link?.label}</a>
                             ))}
                         </div>}
                     </motion.div>
