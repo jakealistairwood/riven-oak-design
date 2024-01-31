@@ -35,13 +35,13 @@ const NavbarWrapper = ({ products, globalData }) => {
         // setOpenDropdown(false);
     }, []);
 
-    useEffect(() => {
-        if (isActive) {
-            document.querySelector("body").classList.add("fixed", "inset-0");
-        } else {
-            document.querySelector("body").classList.remove("fixed", "inset-0");
-        }
-    }, [isActive]);
+    // useEffect(() => {
+    //     if (isActive) {
+    //         document.querySelector("body").classList.add("fixed", "inset-0");
+    //     } else {
+    //         document.querySelector("body").classList.remove("fixed", "inset-0");
+    //     }
+    // }, []);
 
     return (
         <>
@@ -245,9 +245,9 @@ const NavbarWrapper = ({ products, globalData }) => {
                     </div>
                 </motion.nav>
             </header>
-            {isActive && (
+            {/* {isActive && (
                 <div className="fixed inset-0 bg-black opacity-50 z-[90]" />
-            )}
+            )} */}
         </>
     );
 };
