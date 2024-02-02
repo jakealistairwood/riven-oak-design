@@ -113,7 +113,7 @@ const NavbarWrapper = ({ products, globalData }) => {
                         <ul className="hidden lg:flex items-center gap-x-4">
                             <li className="uppercase text-sm border border-solid border-accent text-accent">
                                 <a
-                                    href="mailto:jack@rivenoakdesign.com"
+                                    href="/contact"
                                     className="block py-3 px-5"
                                 >
                                     Get in Touch

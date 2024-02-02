@@ -100,27 +100,26 @@ export async function getAboutPage() {
 
 export async function fetchContactPage() {
     return createClient(clientConfig).fetch(
-        // groq`*[_type == "page" && slug.current == "contact"][0] {
-        //     _id,
-        //     "slug": slug.current,
-        //     contact_page{
-        //       form_submission_message{
-        //         heading,
-        //         message,
-        //         link,
-        //       },
-        //       form_details{
-        //           header,
-        //           description,
-        //           email_js_config{
-        //             public_key,
-        //             service_ID,
-        //             template_id,
-        //           }
-        //       }
-        //     }
-        //   }`
-        groq`*[_type == "page"]`
+        groq`*[_type == "page" && slug.current == "contact"] {
+          _id,
+          "slug": slug.current,
+          contact_page{
+            form_submission_message{
+              heading,
+              message,
+              link,
+            },
+            form_details{
+                header,
+                description,
+                email_js_config{
+                  public_key,
+                  service_ID,
+                  template_id,
+                }
+            }
+          }
+        }`
     )
 }
 

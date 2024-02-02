@@ -21,7 +21,9 @@ const fadeInElement = {
     }
 }
 
-function OurProducts({ heading, description, products }) {
+function OurProducts({ header_info, products }) {
+
+    const { heading, description } = header_info;
 
     return (
         <section id="our-products">
@@ -31,18 +33,20 @@ function OurProducts({ heading, description, products }) {
                     <h2>
                         <AnimatedText text={heading} />
                     </h2>
-                    <motion.p 
-                        className="opacity-80 text-lg font-extralight pt-8 text-dark-grey" 
-                        dangerouslySetInnerHTML={{ __html: description }} 
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                        transition={{
-                            duration: 1.2,
-                            ease: [0.6, 0.01, 0.05, 1],
-                            delay: 0.4
-                        }}
-                    />
+                    {description && (
+                        <motion.p 
+                            className="opacity-80 text-lg font-extralight pt-8 text-dark-grey" 
+                            dangerouslySetInnerHTML={{ __html: description }} 
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{
+                                duration: 1.2,
+                                ease: [0.6, 0.01, 0.05, 1],
+                                delay: 0.4
+                            }}
+                        />
+                    )}
                 </header>
                 <div className="mt-[120px] grid grid-cols-6 gap-5 products-container">
                     {products && products?.map((product, index) => (

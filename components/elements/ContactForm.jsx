@@ -38,14 +38,14 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
     }
 
     return (
-        <form className="max-w-[700px] mx-auto w-full" onSubmit={handleSubmit(onSubmit)} noValidate>
+        <form className="max-w-[600px] mx-auto w-full" onSubmit={handleSubmit(onSubmit)} noValidate>
             <div className="form-control flex flex-col">
-                <label htmlFor="name">Name</label>
+                <label className="pb-2" htmlFor="name">Name:</label>
                 <input
                     id="name"
                     type="text"
                     name="name"
-                    className="border border-solid border-[#d9d9d9] min-h-[50px]"
+                    className="px-4 border border-solid border-[#d9d9d9] min-h-[50px]"
                     {...register("name", {
                         required: {
                             value: true,
@@ -65,9 +65,9 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
                 </div>
             </div>
             <div className="form-control flex flex-col">
-                <label htmlFor="email">Email Address:</label>
+                <label className="pb-2" htmlFor="email">Email Address:</label>
                 <input
-                    className="border border-solid border-[#d9d9d9] min-h-[50px]"
+                    className="px-4 border border-solid border-[#d9d9d9] min-h-[50px]"
                     id="email"
                     name="email"
                     type="email"
@@ -84,9 +84,9 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
                 </div>
             </div>
             <div className="form-control flex flex-col">
-                <label htmlFor="subject">Subject</label>
+                <label className="pb-2" htmlFor="subject">Subject</label>
                 <input
-                    className="border border-solid border-[#d9d9d9] min-h-[50px]"
+                    className="px-4 border border-solid border-[#d9d9d9] min-h-[50px]"
                     id="subject"
                     name="subject"
                     type="text"
@@ -97,9 +97,9 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
                 <div className="min-h-[1.5rem]" />
             </div>
             <div className="form-control flex flex-col">
-                <label htmlFor="message">Your message:</label>
+                <label className="pb-2" htmlFor="message">Your message:</label>
                 <textarea
-                    className="w-full border border-solid border-[#d9d9d9]"
+                    className="p-4 w-full border border-solid border-[#d9d9d9]"
                     rows={3}
                     name='message'
                     {...register('message', {

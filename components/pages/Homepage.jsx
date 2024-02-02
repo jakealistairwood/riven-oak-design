@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Masthead from "../elements/Masthead";
 import ScrollableImage from "../elements/ScrollableImage";
 import ImageCarousel from "../elements/ImageCarousel";
@@ -6,16 +9,17 @@ import CTA from "../global/CTA";
 import Accordion from "../elements/Accordion";
 
 function Homepage(props) {
-    const { homepage, products } = props;
+    const { products, homepage } = props;
 
     return (
         <>
-            <Masthead {...homepage.masthead} />
+            <Masthead {...homepage?.masthead} />
             <ScrollableImage {...homepage.scrollable_image} />
             <Accordion {...homepage.image_swiper} />
             {/* <ImageCarousel {...homepage.image_swiper} /> */}
-            <OurProducts products={products} {...homepage.our_products} />
-            <CTA />
+            {/* <OurProducts {...homepage.our_products} /> */}
+            <OurProducts header_info={homepage?.our_products} products={products} />
+            {/* <CTA /> */}
         </>
     )
 }
