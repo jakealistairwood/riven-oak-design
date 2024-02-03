@@ -10,7 +10,7 @@ import CTA from "../global/CTA";
 
 function ContactPage(props) {
     const [formSubmitSuccessful, setFormSubmitSuccessful] = useState(false);
-    const { data } = props;
+    const { data, ctaData } = props;
     const { contact_page } = data;
   
     return (
@@ -52,7 +52,7 @@ function ContactPage(props) {
                     </>
                 )}
             </div>
-            <CTA isContactPage />
+            <CTA isContactPage ctaData={ctaData} />
         </>
     )
 }

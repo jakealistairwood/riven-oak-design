@@ -9,7 +9,7 @@ import CTA from "../global/CTA";
 import Accordion from "../elements/Accordion";
 
 function Homepage(props) {
-    const { products, homepage } = props;
+    const { products, homepage, ctaData } = props;
 
     return (
         <>
@@ -19,7 +19,7 @@ function Homepage(props) {
             {/* <ImageCarousel {...homepage.image_swiper} /> */}
             {/* <OurProducts {...homepage.our_products} /> */}
             <OurProducts header_info={homepage?.our_products} products={products} />
-            <CTA />
+            <CTA ctaData={ctaData} />
         </>
     )
 }

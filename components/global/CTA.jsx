@@ -1,9 +1,9 @@
+
 import ParallaxImages from "../elements/ParallexImages";
 import { fetchCTAData } from "@/sanity-utils";
 
-async function CTA({ isContactPage }) {
-    const data = await fetchCTAData();
-    const { cta } = data;
+function CTA({ isContactPage, ctaData }) {
+    const { cta } = ctaData;
 
     return (
         <section className={`${cta?.add_image_gallery ? "pt-8 md:pt-24 pb-24 md:pb-0" : "py-24"} ${isContactPage && "!pt-0"}`}>

@@ -6,7 +6,7 @@ import CTA from "../global/CTA";
 
 function ProductPage(props) {
 
-    const { products, product, slug } = props;
+    const { products, product, slug, ctaData } = props;
 
     const filteredProducts = products.filter((product) => product.slug !== slug);
 
@@ -14,7 +14,7 @@ function ProductPage(props) {
         <>
             <ProductMasthead {...product} />
             <ThreeColumnGrid products={filteredProducts} />
-            <CTA />
+            <CTA ctaData={ctaData} />
         </>
     )
 }

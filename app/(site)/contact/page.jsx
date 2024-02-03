@@ -1,14 +1,15 @@
 import { getContactPage } from "@/sanity-utils";
+import { fetchCTAData } from "@/sanity-utils";
 import ContactPage from "@/components/pages/ContactPage";
 
 export default async function Contact() {
 
     const data = await getContactPage();
-    console.log(data);
+    const cta = await fetchCTAData();
 
     return (
         <>
-            <ContactPage data={data} />
+            <ContactPage data={data} ctaData={cta} />
         </>
     )
 }

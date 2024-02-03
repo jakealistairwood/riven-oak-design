@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import OurProducts from "../elements/OurProducts";
 import { createClient, groq } from "next-sanity";
 import { clientConfig } from "@/sanity/config/client-config";
+import CTA from "../global/CTA";
 
 function ProductsPage(props) {
+    const { ctaData } = props;
     const [products, setProducts] = useState(false);
 
     useEffect(() => {
@@ -32,6 +34,7 @@ function ProductsPage(props) {
             <div className="mt-20">
                 <OurProducts products={products} header_info={header_info} />
             </div>
+            <CTA ctaData={ctaData} />
         </>
     )
 }
