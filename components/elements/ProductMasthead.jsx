@@ -1,15 +1,8 @@
 "use client";
 
-// import { Swiper, SwiperSlide } from "swiper";
 import ProductCarousel from "./ProductCarousel";
-import Link from "next/link";
 import AnimatedText from "./AnimatedText";
 import { motion } from "framer-motion";
-//Swiper SCSS
-// import 'swiper/scss';
-// import 'swiper/scss/autoplay';
-// import 'swiper/scss/navigation';
-
 
 function ProductMasthead(props) {
     const { title, product_content } = props;
@@ -18,9 +11,6 @@ function ProductMasthead(props) {
         <section>
             <div className="container" id="product-masthead">
                 <div className="flex flex-col lg:grid gap-8 lg:gap-16 lg:grid-cols-12 pb-24">
-                    {/* <Swiper>
-
-                    </Swiper> */}
                     <ProductCarousel productImages={product_content?.gallery} />
                     <div className="col-span-5 flex flex-col self-center mt-10">
                         {title && (
@@ -48,9 +38,9 @@ function ProductMasthead(props) {
                                     ))
                                 ))}
                             </div>
-                            <Link className="bg-accent py-4 px-6 text-white text-normal mt-12 w-fit btn" href="mailto:jack@rivenoakdesign.com">
+                            <a className="bg-accent py-4 px-6 text-white text-normal mt-12 w-fit btn" href="/contact">
                                 Contact to Purchase
-                            </Link>
+                            </a>
                         </motion.div>
                     </div>
                 </div>
