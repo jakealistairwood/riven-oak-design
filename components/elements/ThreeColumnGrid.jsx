@@ -7,9 +7,9 @@ import Image from "next/image";
 
 function ThreeColumnGrid({ products }) {
     return (
-        <section className="bg-[#F4F0EC] py-24 mb-24">
+        <section className="bg-[#F4F0EC] py-16 md:py-24 mb-24">
             <div className="container">
-                <h2 className="text-center mb-20">
+                <h2 className="text-center mb-12 md:mb-20">
                     <AnimatedText text={"Other Products"} />
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
@@ -22,7 +22,7 @@ function ThreeColumnGrid({ products }) {
                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                 <div className="mt-auto relative z-[2] text-white">
                                     <small className="uppercase">Product</small>
-                                    <h3 className="text-xl lg:text-2xl font-medium">{product?.title}</h3>
+                                    <h3 className="!font-inter text-xl lg:text-2xl font-medium">{product?.title}</h3>
                                 </div>
                             </Link>
                         </motion.div>

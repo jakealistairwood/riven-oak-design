@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @apply text-[2.25rem] md:text-[5rem] leading-[1];
+    @apply text-[3rem] sm:text-[2.25rem] md:text-[5rem] leading-[1];
 }
 
 p {
@@ -31,7 +31,7 @@ p {
 }
 
 h2 {
-    @apply text-[3.125rem] md:text-[4rem];
+    @apply text-[2.4rem] md:text-[4rem];
 }
 
 a, button {
