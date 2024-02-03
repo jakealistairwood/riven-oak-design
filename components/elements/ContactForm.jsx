@@ -118,7 +118,7 @@ const ContactForm = ({ emailJsConfig, setFormSubmitSuccessful }) => {
                 ></textarea>
                 <div className="min-h-[1.5rem]">
                     {errors.message && (
-                        <span className="text-sm text-red-500">Please enter a valid email address</span>
+                        <span className="text-sm text-red-500">Please provide a brief description about your enquiry</span>
                     )}
                 </div>
             </div>
