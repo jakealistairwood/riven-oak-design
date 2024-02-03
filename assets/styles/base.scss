@@ -33,6 +33,14 @@ h2 {
     @apply text-[3.125rem] md:text-[4rem];
 }
 
+a, button {
+    font-family: var(--inter) !important;
+}
+
+.btn {
+    @apply uppercase;
+}
+
 #hero-masthead,
 #product-masthead,
 #about-masthead {

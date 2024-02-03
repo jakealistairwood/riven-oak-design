@@ -111,10 +111,10 @@ const NavbarWrapper = ({ products, globalData }) => {
                             />
                         </a>
                         <ul className="hidden lg:flex items-center gap-x-4">
-                            <li className="uppercase text-sm border border-solid border-accent text-accent">
+                            <li className="uppercase text-sm border border-solid border-accent text-accent hover:bg-accent hover:text-white transition-all duration-200 ease-linear">
                                 <a
                                     href="/contact"
-                                    className="block py-3 px-5"
+                                    className="btn block py-3 px-5"
                                 >
                                     Get in Touch
                                 </a>
@@ -245,9 +245,9 @@ const NavbarWrapper = ({ products, globalData }) => {
                     </div>
                 </motion.nav>
             </header>
-            {/* {isActive && (
+            {isActive && (
                 <div className="fixed inset-0 bg-black opacity-50 z-[90]" />
-            )} */}
+            )}
         </>
     );
 };

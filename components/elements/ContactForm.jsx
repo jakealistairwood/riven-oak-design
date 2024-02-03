@@ -113,9 +113,9 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
                     )}
                 </div>
             </div>
-            <div className="flex items-center gap-6">
-                <button className="bg-accent py-4 px-10 text-white" type="submit">Send message</button>
-                <button className="border-accent border-solid border py-4 px-10 text-accent" type="reset">Reset</button>
+            <div className="flex flex-col-reverse md:flex-row-reverse items-center gap-4 md:gap-2 md:flex-wrap">
+                <button className="btn bg-accent py-4 px-10 text-white uppercase w-full md:w-fit" type="submit">Send message</button>
+                <button className="btn border-accent border-solid border py-4 px-10 text-accent uppercase hover:bg-accent hover:text-white duration-200 ease-linear transition-all w-full md:w-fit" type="reset">Reset</button>
             </div>
         </form>
     );

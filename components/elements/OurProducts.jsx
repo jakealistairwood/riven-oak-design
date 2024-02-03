@@ -27,7 +27,7 @@ function OurProducts({ header_info, products }) {
 
     return (
         <section id="our-products">
-            <div className="container mx-auto py-28">
+            <div className="container mx-auto py-16 md:py-28">
                 <header className="section-header text-center max-w-[781px] w-full mx-auto">
                     {/* <h2 dangerouslySetInnerHTML={{ __html: heading }} /> */}
                     <h2>
@@ -48,7 +48,7 @@ function OurProducts({ header_info, products }) {
                         />
                     )}
                 </header>
-                <div className="mt-[120px] grid grid-cols-6 gap-5 products-container">
+                <div className="mt-16 md:mt-[120px] grid grid-cols-6 gap-5 products-container">
                     {products && products?.map((product, index) => (
                         <motion.a key={`product-card-${index}`} variants={fadeInElement} custom={index} whileInView="animate" initial="initial" viewport={{ once: true }} href={`/products/${product.slug}`} className="relative product-card" style={{ gridArea: `grid-area-${index + 1}` }}>
                             <div className="aspect-[1/1] flex flex-col justify-end p-6 lg:p-10 text-white overflow-hidden group" style={{

@@ -14,11 +14,11 @@ function ThreeColumnGrid({ products }) {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
                     {products?.map((product, index) => (
-                        <motion.div key={`product-card-${index}`} initial={{ y: 100, opacity: 0, filter: "blur(4px)"}} whileInView={{ y: 0, opacity: 1, filter: "blur(0px)", transition: { delay: index * 0.2, duration: 0.4 } }} viewport={{ once: true }}>
+                        <motion.div className="group" key={`product-card-${index}`} initial={{ y: 100, opacity: 0, filter: "blur(4px)"}} whileInView={{ y: 0, opacity: 1, filter: "blur(0px)", transition: { delay: index * 0.2, duration: 0.4 } }} viewport={{ once: true }}>
                             <Link href={`/products/${product.slug}`} className="px-6 py-4 lg:px-10 lg:py-7 flex flex-col overflow-hidden relative aspect-[523/392]">
-                                <motion.div className="absolute inset-0" whileHover={{ scale: 1.1 }}>
-                                    <Image loading="lazy" quality={80} fill={true} objectFit="cover" src={product?.featured_image?.asset?.url} alt={`${product?.title} Featured Image`} sizes="(max-width: 768px) 100vw, 500px" />
-                                </motion.div>
+                                <div className="absolute inset-0">
+                                    <Image className="scale-100 group-hover:scale-105 duration-200 ease-linear transition-transform" loading="lazy" quality={80} fill={true} objectFit="cover" src={product?.featured_image?.asset?.url} alt={`${product?.title} Featured Image`} sizes="(max-width: 768px) 100vw, 500px" />
+                                </div>
                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                 <div className="mt-auto relative z-[2] text-white">
                                     <small className="uppercase">Product</small>

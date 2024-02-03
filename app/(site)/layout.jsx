@@ -4,9 +4,9 @@ import Header from '@/components/global/Header'
 import Footer from '@/components/global/Footer';
 import CTA from '@/components/global/CTA';
 
-const inter = Inter({ subsets: ['latin'], variable: "--inter" });
+const inter = Inter({ subsets: ['latin'], weight: ["400", "500", "700"], variable: "--inter" });
 const instrumentSerif = Instrument_Serif({ subsets: ['latin'], weight: ["400"], variable: "--instrument-serif", adjustFontFallback: false });
-const instrumentSans = Instrument_Sans({ subsets: ['latin'], weight: ["400"], variable: "--instrument-sans", adjustFontFallback: false });
+const instrumentSans = Instrument_Sans({ subsets: ['latin'], weight: ["400", "500", "600", "700"], variable: "--instrument-sans", adjustFontFallback: false });
 const ibmPlexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: ["400"], variable: "--ibm-plex-mono", adjustFontFallback: false });
 
 export const metadata = {

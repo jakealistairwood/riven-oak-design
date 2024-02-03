@@ -9,8 +9,8 @@ export default function TwoColumnTextImage(props) {
     const { heading, content, image } = props;
 
     return (
-        <section className="relative my-24">
-            <div className="container relative grid grid-cols-1 md:grid-cols-2 gap-28">
+        <section className="relative my-16 md:my-24">
+            <div className="container relative grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-28">
                 <div className="self-center container prose">
                     {heading && (
                         <h2 className="mb-6">

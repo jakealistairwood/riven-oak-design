@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 function ScrollableImage({ heading, description, gallery }) {
     return (
         <section>
-            <div className="container mx-auto py-28">
+            <div className="container mx-auto py-16 md:py-28">
                 <header className="section-header text-center max-w-[781px] w-full mx-auto">
                     <h2>
                         <AnimatedText text={heading} />

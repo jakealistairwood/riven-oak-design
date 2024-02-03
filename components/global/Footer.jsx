@@ -68,7 +68,7 @@ async function Footer() {
                         </div>
                     </div>
                     <div className="pt-7 border-t border-solid border-[#E4E4E4] mt-14 flex flex-col-reverse md:flex-row gap-y-4 justify-between items-center w-full">
-                        <small className="text-[#727272]">&copy; 2023, Riven Oak Design. All rights reserved.</small>
+                        <small className="text-[#727272] text-center md:text-left">&copy; 2024, Riven Oak Design. All rights reserved.</small>
                         <div className="flex items-center gap-[10px]">
                             {footer?.social_icons?.map((icon, index) => (
                                 <a key={`social-icon-${index}`} href={icon?.url} className="h-[45px] w-[45px] rounded-full bg-white flex items-center justify-center">

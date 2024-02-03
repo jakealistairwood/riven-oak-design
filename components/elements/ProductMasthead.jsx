@@ -48,7 +48,7 @@ function ProductMasthead(props) {
                                     ))
                                 ))}
                             </div>
-                            <Link className="bg-accent py-4 px-6 text-white text-normal mt-12 w-fit" href="mailto:jack@rivenoakdesign.com">
+                            <Link className="bg-accent py-4 px-6 text-white text-normal mt-12 w-fit btn" href="mailto:jack@rivenoakdesign.com">
                                 Contact to Purchase
                             </Link>
                         </motion.div>

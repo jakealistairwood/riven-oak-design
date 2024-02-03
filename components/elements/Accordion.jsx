@@ -28,7 +28,7 @@ const animateAccordion = {
 
 const Accordion = ({ description, heading, gallery }) => {
     return (
-        <section className="bg-[#F6F6F6] py-24">
+        <section className="bg-[#F6F6F6] py-16 md:py-24">
             <div className="container w-full  sm:w-4/5 lg:w-1/2 mx-auto">
                 <header className="flex flex-col md:flex-row justify-center items-center gap-y-10 text-center w-full pb-16">
                     <div className="flex flex-col w-full max-w-[560px]">
