@@ -152,6 +152,26 @@ export async function getContactPage() {
   )
 }
 
+export async function fetchCTAData() {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == "global_options"][0] {
+      cta{
+        heading,
+        description,
+        add_image_gallery,
+        gallery{
+          top_slider[]{
+            asset->
+          },
+          bottom_slider[]{
+            asset->
+          }
+        }
+      }
+    }`
+  )
+}
+
 export async function getFooterData() {
     const data = await createClient(clientConfig).fetch(
         groq`*[_type == "global_options"] {

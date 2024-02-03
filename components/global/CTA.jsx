@@ -1,35 +1,13 @@
-import { clientConfig } from "@/sanity/config/client-config";
-import { createClient, groq } from "next-sanity";
 import ParallaxImages from "../elements/ParallexImages";
+import { fetchCTAData } from "@/sanity-utils";
 
-async function fetchCTAData() {
-    const data = await createClient(clientConfig).fetch(
-        groq`*[_type == "global_options"] {
-            cta{
-              heading,
-              description,
-              add_image_gallery,
-              gallery{
-                top_slider[]{
-                  asset->
-                },
-                bottom_slider[]{
-                  asset->
-                }
-              }
-            }
-          }`
-    )
-    return data[0];
-}
-
-async function CTA() {
+async function CTA({ isContactPage }) {
     const data = await fetchCTAData();
     const { cta } = data;
 
     return (
-        <section className={`${cta?.add_image_gallery ? "pt-8 md:pt-24 pb-24 md:pb-0" : "py-24"}`}>
-            <div className="container">
+        <section className={`${cta?.add_image_gallery ? "pt-8 md:pt-24 pb-24 md:pb-0" : "py-24"} ${isContactPage && "!pt-0"}`}>
+            {!isContactPage && <div className="container">
                 <div className="flex flex-col text-center max-w-[650px] w-full mx-auto">
                     <h2 className="mb-10" dangerouslySetInnerHTML={{ __html: cta?.heading }} />
                     <p className="text-lg text-dark-grey opacity-80 font-extralight">{cta?.description}</p>
@@ -37,7 +15,7 @@ async function CTA() {
                         Get in Touch
                     </a>
                 </div>
-            </div>
+            </div>}
             {cta?.add_image_gallery && <ParallaxImages top_slider={cta?.gallery?.top_slider} bottom_slider={cta?.gallery?.bottom_slider} />}
         </section>
     )

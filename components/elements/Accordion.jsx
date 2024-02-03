@@ -78,7 +78,6 @@ const AccordionItem = ({ index, accordion_content }) => {
         >
             <div className="flex items-center justify-between w-full">
                 <div className="flex items-center gap-6">
-                    <span className="">{index + 1}</span>
                     <h3 className="text-[2.5rem]">{content?.title}</h3>
                 </div>
                 <div>

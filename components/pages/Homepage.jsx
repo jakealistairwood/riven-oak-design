@@ -19,7 +19,7 @@ function Homepage(props) {
             {/* <ImageCarousel {...homepage.image_swiper} /> */}
             {/* <OurProducts {...homepage.our_products} /> */}
             <OurProducts header_info={homepage?.our_products} products={products} />
-            {/* <CTA /> */}
+            <CTA />
         </>
     )
 }

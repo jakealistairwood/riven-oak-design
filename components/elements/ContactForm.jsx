@@ -114,7 +114,7 @@ const ContactForm = ({ emailJsConfig, setFormSubmitSuccessful }) => {
                     {...register('message', {
                         required: true
                     })}
-                    placeholder='Message'
+                    placeholder='Please write any details about your enquiry here'
                 ></textarea>
                 <div className="min-h-[1.5rem]">
                     {errors.message && (

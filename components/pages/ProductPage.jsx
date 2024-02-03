@@ -1,6 +1,8 @@
+"use client";
+
 import ProductMasthead from "../elements/ProductMasthead";
 import ThreeColumnGrid from "../elements/ThreeColumnGrid";
-// import CTA from "../global/CTA";
+import CTA from "../global/CTA";
 
 function ProductPage(props) {
 
@@ -12,7 +14,7 @@ function ProductPage(props) {
         <>
             <ProductMasthead {...product} />
             <ThreeColumnGrid products={filteredProducts} />
-            {/* <CTA /> */}
+            <CTA />
         </>
     )
 }

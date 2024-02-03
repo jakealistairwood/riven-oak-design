@@ -9,8 +9,6 @@ import AnimatedText from "./AnimatedText";
 
 function Masthead({ heading, description, links, image }) {
 
-    console.log(heading, description);
-
     const [ref, inView] = useInView();
     const controls = useAnimation();
 

@@ -4,8 +4,8 @@ import Image from "next/image";
 import AnimatedText from "./AnimatedText";
 
 export default function ThreeColumnContent(props) {
-    console.log(props);
     const { grid_cards, section_heading } = props;
+    
     return (
         <section className="bg-light-beige py-16 md:py-24 mb-12 md:mb-24">
             <div className="container">
