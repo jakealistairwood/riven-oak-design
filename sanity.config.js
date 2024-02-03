@@ -9,7 +9,6 @@ const config = defineConfig({
     dataset: 'production',
     title: "Riven Oak Design",
     basePath: "/studio",
-    apiVersion: "2024-02-01",
     useCdn: true,
     plugins: [deskTool(), visionTool()],
     schema: { types: schemas },

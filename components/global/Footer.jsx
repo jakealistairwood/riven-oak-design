@@ -44,7 +44,7 @@ async function Footer() {
                                     <li className="mb-7 font-semibold">Site</li>
                                     <li className="mb-4 opacity-70 hover:opacity-100"><a href="/">Home</a></li>
                                     <li className="mb-4 opacity-70 hover:opacity-100"><a href="/about">About</a></li>
-                                    <li className="mb-4 opacity-70 hover:opacity-100"><a href="/gallery">Gallery</a></li>
+                                    <li className="mb-4 opacity-70 hover:opacity-100"><a href="/products">Products</a></li>
                                     <li className="mb-4 opacity-70 hover:opacity-100"><a href="/contact">Contact</a></li>
                                 </ul>
                             </nav>

@@ -2,10 +2,13 @@
 
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
-const ContactForm = ({ setFormSubmitSuccessful }) => {
+const ContactForm = ({ emailJsConfig, setFormSubmitSuccessful }) => {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+    const { public_key, service_ID, template_id } = emailJsConfig;
 
     const onSubmit = async(data) => {
         const { name, email, subject, message } = data;
@@ -19,13 +22,19 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
             };
 
             await emailjs.send(
-                "service_svib44s",
-                "template_isbakvr",
+                service_ID,
+                template_id,
                 templateParams,
-                "95v4DqrB9npXsx2GJ"
+                public_key
             );
             
             setFormSubmitSuccessful(true);
+
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
 
             reset();
         } catch (e) {
@@ -38,9 +47,9 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
     }
 
     return (
-        <form className="max-w-[600px] mx-auto w-full" onSubmit={handleSubmit(onSubmit)} noValidate>
+        <motion.form initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.3, delay: 0.8 }} className="max-w-[600px] mx-auto w-full" onSubmit={handleSubmit(onSubmit)} noValidate>
             <div className="form-control flex flex-col">
-                <label className="pb-2" htmlFor="name">Name:</label>
+                <label className="pb-2 font-medium" htmlFor="name">Name:</label>
                 <input
                     id="name"
                     type="text"
@@ -65,7 +74,7 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
                 </div>
             </div>
             <div className="form-control flex flex-col">
-                <label className="pb-2" htmlFor="email">Email Address:</label>
+                <label className="pb-2 font-medium" htmlFor="email">Email Address:</label>
                 <input
                     className="px-4 border border-solid border-[#d9d9d9] min-h-[50px]"
                     id="email"
@@ -97,7 +106,7 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
                 <div className="min-h-[1.5rem]" />
             </div>
             <div className="form-control flex flex-col">
-                <label className="pb-2" htmlFor="message">Your message:</label>
+                <label className="pb-2 font-medium" htmlFor="message">Your message:</label>
                 <textarea
                     className="p-4 w-full border border-solid border-[#d9d9d9]"
                     rows={3}
@@ -113,11 +122,11 @@ const ContactForm = ({ setFormSubmitSuccessful }) => {
                     )}
                 </div>
             </div>
-            <div className="flex flex-col-reverse md:flex-row-reverse items-center gap-4 md:gap-2 md:flex-wrap">
+            <div initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 1.4 }} className="flex flex-col-reverse md:flex-row-reverse items-center gap-4 md:gap-2 md:flex-wrap">
                 <button className="btn bg-accent py-4 px-10 text-white uppercase w-full md:w-fit" type="submit">Send message</button>
-                <button className="btn border-accent border-solid border py-4 px-10 text-accent uppercase hover:bg-accent hover:text-white duration-200 ease-linear transition-all w-full md:w-fit" type="reset">Reset</button>
+                <button onClick={resetForm} className="btn border-accent border-solid border py-4 px-10 text-accent uppercase hover:bg-accent hover:text-white duration-200 ease-linear transition-all w-full md:w-fit" type="reset">Reset</button>
             </div>
-        </form>
+        </motion.form>
     );
 };
 
