@@ -31,17 +31,15 @@ const NavbarWrapper = ({ products, globalData }) => {
 
     useEffect(() => {
         setIsActive(false);
-        // setProductsActive(false);
-        // setOpenDropdown(false);
     }, []);
 
-    // useEffect(() => {
-    //     if (isActive) {
-    //         document.querySelector("body").classList.add("fixed", "inset-0");
-    //     } else {
-    //         document.querySelector("body").classList.remove("fixed", "inset-0");
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (isActive) {
+            document.querySelector("body").classList.add("fixed", "inset-0");
+        } else {
+            document.querySelector("body").classList.remove("fixed", "inset-0");
+        }
+    }, [isActive]);
 
     return (
         <>
@@ -57,41 +55,6 @@ const NavbarWrapper = ({ products, globalData }) => {
                             </li>
                             <li className="uppercase opacity-100 text-sm hover:underline underline-offset-4 relative">
                                 <a href="/products">Products</a>
-                                {/* <button
-                                    onClick={() =>
-                                        setOpenDropdown(!openDropdown)
-                                    }
-                                    onFocus={() => setOpenDropdown(true)}
-                                    className="flex uppercase items-center gap-x-[6px] w-full"
-                                >
-                                    Products
-                                    <div>
-                                        <Image
-                                            className={`${openDropdown ? "rotate-180" : "rotate-0"} transition-transform duration-200 ease-linear origin-center`}
-                                            src="/images/claret-down.svg"
-                                            alt=""
-                                            height={12}
-                                            width={12}
-                                        />
-                                    </div>
-                                </button> */}
-                                {/* <motion.nav
-                                    animate={openDropdown ? "open" : "closed"}
-                                    variants={animateMobileMenu}
-                                    className={`${
-                                        openDropdown
-                                            ? "pointer-events-auto"
-                                            : "pointer-events-none"
-                                    } absolute top-[70px] left-0 bg-white rounded-lg bg-red z-[100] w-full min-w-[450px]`}
-                                >
-                                    <ul className="grid grid-cols-2 w-full p-10 gap-4">
-                                        {products?.map((product, index) => (
-                                            <li className="" key={`product-dropdown-link-${index}`}>
-                                                <Link href={`/products/${product?.slug}` || ""} onClick={() => setOpenDropdown(false)} className="w-full block text-left opacity-70 duration-300 hover:opacity-100">{product?.title}</Link> 
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </motion.nav> */}
                             </li>
                         </ul>
                         <MenuButton
@@ -148,13 +111,13 @@ const NavbarWrapper = ({ products, globalData }) => {
                                     About
                                 </a>
                             </li>
-                            <li className="border-b border-solid border-[#E8E8E8] py-4">
+                            <li className="border-b border-solid border-[#E8E8E8] ">
                                 <a
                                     onClick={() => setIsActive(false)}
                                     className="w-full block text-left py-4 font-medium uppercase"
-                                    href="/about"
+                                    href="/products"
                                 >
-                                    Product
+                                    Products
                                 </a>
                                 {/* <button
                                     type="button"
