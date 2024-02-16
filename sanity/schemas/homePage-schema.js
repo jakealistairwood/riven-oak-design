@@ -10,8 +10,8 @@ export const homepageSchema = defineType({
             type: "masthead",
         }),
         defineField({
-            name: "scrollable_image",
-            title: "Scrollable Image",
+            name: "introduction",
+            title: "Introduction",
             type: "object",
             fields: [
                 {
@@ -22,25 +22,13 @@ export const homepageSchema = defineType({
                 {
                     name: "description",
                     title: "Description",
-                    type: "string",
+                    type: "text",
                 },
-                {
-                    name: "gallery",
-                    title: "Gallery",
-                    type: "array",
-                    of: [
-                        {
-                            name: "image",
-                            title: "Image",
-                            type: "image"
-                        }
-                    ]
-                }
             ]
         }),
         defineField({
-            name: "image_swiper",
-            title: "Image Swiper",
+            name: "our_process",
+            title: "Our Process",
             type: "object",
             fields: [
                 {
@@ -76,7 +64,7 @@ export const homepageSchema = defineType({
                                         {
                                             name: "description",
                                             title: "Description",
-                                            type: "string",
+                                            type: "text",
                                         },
                                     ]
                                 },

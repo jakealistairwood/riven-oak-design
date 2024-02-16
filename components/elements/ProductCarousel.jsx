@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Navigation } from "swiper/modules";
 import Image from "next/image";
+import { urlFor } from "@/utils/SanityImage";
 
 //Swiper SCSS
 import 'swiper/scss';
@@ -35,9 +36,9 @@ function ProductCarousel({ productImages }) {
                     <SwiperSlide key={`product-image-${index}`}>
                         <div className="relative aspect-[1/1]">
                             {index === 0 ? (
-                                <Image priority fill={true} objectFit="cover" src={product?.asset?.url} alt="" quality={80} sizes="(max-width: 768px) 100vw, 800px" />
+                                <Image priority fill={true} objectFit="cover" src={urlFor(product?.asset?.url).format("webp").width(1200).url()} alt={product?.asset?.alt || ""} />
                             ) : (
-                                <Image loading="lazy" fill={true} objectFit="cover" src={product?.asset?.url} alt="" quality={80} sizes="(max-width: 768px) 100vw, 800px" />
+                                <Image loading="lazy" fill={true} objectFit="cover" src={urlFor(product?.asset?.url).format("webp").width(1200).url()} alt={product?.asset?.alt || ""}  />
                             )}
                         </div>
                     </SwiperSlide>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import AnimatedText from "./AnimatedText";
+import { urlFor } from "@/utils/SanityImage";
 
 const fadeInElement = {
     initial: {
@@ -50,13 +51,13 @@ function OurProducts({ header_info, products }) {
                 </header>
                 <div className="mt-16 md:mt-[120px] grid grid-cols-6 gap-5 products-container">
                     {products && products?.map((product, index) => (
-                        <motion.a key={`product-card-${index}`} variants={fadeInElement} custom={index} whileInView="animate" initial="initial" viewport={{ once: true }} href={`/products/${product.slug}`} className="relative product-card" style={{ gridArea: `grid-area-${index + 1}` }}>
+                        <motion.a key={`product-card-${index}`} variants={fadeInElement} custom={index} whileInView="animate" initial="initial" viewport={{ once: true }} href={`/products/${product.slug}`} className="relative product-card overflow-hidden" style={{ gridArea: `grid-area-${index + 1}` }}>
                             <div className="aspect-[1/1] flex flex-col justify-end p-6 lg:p-10 text-white overflow-hidden group" style={{
-                                backgroundImage: `url(${product?.featured_image?.asset?.url})`,
-                                backgroundRepeat: "no-repeat",
-                                backgroundSize: "cover",
+                                // backgroundImage: `url(${product?.featured_image?.asset?.url})`,
+                                // backgroundRepeat: "no-repeat",
+                                // backgroundSize: "cover",
                             }}>
-                                {/* <Image src={product?.featured_image?.asset?.url} fill alt="" className="object-cover group-hover:scale-105 duration-200 ease-linear transition-transform" /> */}
+                                <Image src={urlFor(product?.featured_image?.asset?.url).format("webp").width(1000).url()} fill alt="" className="object-cover group-hover:scale-105 duration-200 ease-linear transition-transform" />
                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                 <div className="relative z-[2]">
                                     <small className="text-sm lg:text-normal uppercase text-normal">Product</small>

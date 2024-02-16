@@ -74,14 +74,15 @@ const NavbarWrapper = ({ products, globalData }) => {
                             />
                         </a>
                         <ul className="hidden lg:flex items-center gap-x-4">
-                            <li className="uppercase text-sm border border-solid border-accent text-accent hover:bg-accent hover:text-white transition-all duration-200 ease-linear">
+                            {/* <li className="uppercase text-sm border border-solid border-accent text-accent hover:bg-accent hover:text-white transition-all duration-200 ease-linear">
                                 <a
                                     href="/contact"
                                     className="btn block py-3 px-5"
                                 >
                                     Get in Touch
                                 </a>
-                            </li>
+                            </li> */}
+                            <a href="/contact" class="group relative text-sm uppercase border border-solid border-accent text-accent hover:bg-accent hover:text-white inline-flex h-12 items-center justify-center overflow-hidden px-6 duration-500"><div class="translate-y-0 transition group-hover:-translate-y-[150%] group-hover:text-white">Get in touch</div><div class="absolute translate-y-[150%] transition group-hover:translate-y-0 group-hover:text-white">Get in touch</div></a>
                         </ul>
                     </nav>
                 </div>

@@ -4,6 +4,7 @@ import AnimatedText from "./AnimatedText";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { urlFor } from "@/utils/SanityImage";
 
 function ThreeColumnGrid({ products }) {
     return (
@@ -17,7 +18,7 @@ function ThreeColumnGrid({ products }) {
                         <motion.div className="group" key={`product-card-${index}`} initial={{ y: 100, opacity: 0, filter: "blur(4px)"}} whileInView={{ y: 0, opacity: 1, filter: "blur(0px)", transition: { delay: index * 0.2, duration: 0.4 } }} viewport={{ once: true }}>
                             <Link href={`/products/${product.slug}`} className="px-6 py-4 lg:px-10 lg:py-7 flex flex-col overflow-hidden relative aspect-[523/392]">
                                 <div className="absolute inset-0">
-                                    <Image className="scale-100 group-hover:scale-105 duration-200 ease-linear transition-transform" loading="lazy" quality={80} fill={true} objectFit="cover" src={product?.featured_image?.asset?.url} alt={`${product?.title} Featured Image`} sizes="(max-width: 768px) 100vw, 500px" />
+                                    <Image className="scale-100 group-hover:scale-105 duration-200 ease-linear transition-transform" loading="lazy" quality={80} fill={true} objectFit="cover" src={urlFor(product?.featured_image?.asset?.url).format("webp").width(600).url()} alt={`${product?.title} Featured Image`} />
                                 </div>
                                 <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0, 0, 0, 0.00) 55.3%, rgba(0, 0, 0, 0.73) 100%)" }} />
                                 <div className="mt-auto relative z-[2] text-white">

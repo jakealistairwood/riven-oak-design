@@ -123,8 +123,10 @@ const ContactForm = ({ emailJsConfig, setFormSubmitSuccessful }) => {
                 </div>
             </div>
             <div className="flex flex-col-reverse md:flex-row-reverse items-center gap-4 md:gap-2 md:flex-wrap">
-                <button className="btn bg-accent py-[10px] md:py-4 px-10 text-white uppercase w-full md:w-fit" type="submit">Send message</button>
-                <button onClick={resetForm} className="btn border-accent border-solid border py-[10px] md:py-4 px-10 text-accent uppercase hover:bg-accent hover:text-white duration-200 ease-linear transition-all w-full md:w-fit" type="reset">Reset</button>
+                {/* <button className="btn bg-accent py-[10px] md:py-4 px-10 text-white uppercase w-full md:w-fit" type="submit">Send message</button> */}
+                <button class="group relative text-sm uppercase border border-solid border-accent bg-accent text-white hover:bg-accent hover:text-white inline-flex h-12 items-center justify-center overflow-hidden py-[10px] md:py-4 px-10 duration-500"><div class="translate-y-0 transition group-hover:-translate-y-[150%] group-hover:text-white">Send message</div><div class="absolute translate-y-[150%] transition group-hover:translate-y-0 group-hover:text-white">Send message</div></button>
+                <button onClick={resetForm} class="group relative text-sm uppercase border border-solid border-accent text-accent hover:bg-accent hover:text-white inline-flex h-12 items-center justify-center overflow-hidden py-[10px] md:py-4 px-10 duration-500"><div class="translate-y-0 transition group-hover:-translate-y-[150%] group-hover:text-white">Reset</div><div class="absolute translate-y-[150%] transition group-hover:translate-y-0 group-hover:text-white">Reset</div></button>
+                {/* <button onClick={resetForm} className="btn border-accent border-solid border py-[10px] md:py-4 px-10 text-accent uppercase hover:bg-accent hover:text-white duration-200 ease-linear transition-all w-full md:w-fit" type="reset">Reset</button> */}
             </div>
         </motion.form>
     );

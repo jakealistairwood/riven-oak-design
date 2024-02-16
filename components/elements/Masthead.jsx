@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import AnimatedText from "./AnimatedText";
+import { urlFor } from "@/utils/SanityImage";
 
 function Masthead({ heading, description, links, image }) {
 
@@ -25,7 +26,7 @@ function Masthead({ heading, description, links, image }) {
                     background: "rgba(0, 0, 0, 0.5)"
                 }} /> */}
                 <div className="h-full aspect-[1624/789]">
-                    <Image priority src={image?.asset?.url} objectFit="cover" fill={true} />
+                    <Image priority src={urlFor(image?.asset?.url).format("webp").url()} objectFit="cover" fill={true} />
                     <div className="absolute inset-0 z-[2]" style={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }} />
                 </div>
                 <div className="flex flex-col w-full max-w-[574px] text-center px-4 relative z-[3]">

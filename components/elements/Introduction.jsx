@@ -3,7 +3,7 @@
 import AnimatedText from "./AnimatedText";
 import { motion } from "framer-motion";
 
-function ScrollableImage({ heading, description, gallery }) {
+function Introduction({ heading, description }) {
     return (
         <section>
             <div className="container mx-auto py-16 md:py-28">
@@ -30,4 +30,4 @@ function ScrollableImage({ heading, description, gallery }) {
     )
 }
 
-export default ScrollableImage;
+export default Introduction;

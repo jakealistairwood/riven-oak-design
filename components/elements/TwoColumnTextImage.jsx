@@ -4,6 +4,7 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import AnimatedText from "./AnimatedText";
 import { motion } from "framer-motion";
+import { urlFor } from "@/utils/SanityImage";
 
 export default function TwoColumnTextImage(props) {
     const { heading, content, image } = props;
@@ -50,9 +51,9 @@ export default function TwoColumnTextImage(props) {
                     <Image
                         className="grayscale"
                         fill={true}
-                        src={image?.asset?.url}
+                        src={urlFor(image?.asset?.url).format("webp").width(1000).url()}
                         objectFit="cover"
-                        sizes="(max-width: 992px) 100vw, (max-width: 1440px) 600px, 800px"
+                        alt={image?.asset?.alt || ""}
                     />
                 </motion.div>
             </div>

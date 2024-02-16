@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import AnimatedText from "./AnimatedText";
+import { urlFor } from "@/utils/SanityImage";
 
 const animateAccordion = {
     initial: {
@@ -71,12 +72,10 @@ const AccordionItem = ({ index, accordion_content }) => {
     const [openAccordion, setOpenAccordion] = useState(false);
 
     return (
-        <button
+        <div
             className="py-6 flex flex-col border-b border-solid border-[#DEDEDE]"
-            type="button"
-            onClick={() => setOpenAccordion(!openAccordion)}
         >
-            <div className="flex items-center justify-between w-full">
+            <button className="flex items-center justify-between w-full" type="button" onClick={() => setOpenAccordion(!openAccordion)}>
                 <div className="flex items-center gap-6">
                     <h3 className="text-[1.5rem] md:text-[2.5rem]">{content?.title}</h3>
                 </div>
@@ -97,7 +96,7 @@ const AccordionItem = ({ index, accordion_content }) => {
                         />
                     </svg>
                 </div>
-            </div>
+            </button>
             <motion.div
                 initial="initial"
                 animate={openAccordion ? "open" : "closed"}
@@ -111,7 +110,7 @@ const AccordionItem = ({ index, accordion_content }) => {
                 <div className="min-h-[40px]" />
                 <div className="aspect-[16/9] relative w-full">
                     <Image
-                        src={image?.asset?.url}
+                        src={urlFor(image?.asset?.url).format("webp").quality(80).url()}
                         fill
                         alt=""
                         className="object-cover"
@@ -119,7 +118,7 @@ const AccordionItem = ({ index, accordion_content }) => {
                 </div>
                 <p className="my-10 text-left px-8" dangerouslySetInnerHTML={{ __html: content?.description }} />
             </motion.div>
-        </button>
+        </div>
     );
 };
 

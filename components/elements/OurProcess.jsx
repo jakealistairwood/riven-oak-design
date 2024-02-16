@@ -5,13 +5,14 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { urlFor } from "@/utils/SanityImage";
 
 //Swiper SCSS
 import 'swiper/scss';
 import 'swiper/scss/autoplay';
 import 'swiper/scss/navigation';
 
-const ImageCarousel = ({ description, heading, gallery }) => {
+const OurProcess = ({ description, heading, gallery }) => {
 
     const prevButtonRef = useRef(null);
     const nextButtonRef = useRef(null);
@@ -81,7 +82,7 @@ const ImageCarousel = ({ description, heading, gallery }) => {
                                             </div>
                                         ) : (
                                             <div className="w-auto opacity-50">
-                                                <Image className="h-full w-full object-cover" quality={80} fill={true} src={item?.image?.asset?.url} alt={item?.image?.asset?.alt} sizes="(max-width: 992px) 100vw, 850px" />
+                                                <Image className="h-full w-full object-cover" fill={true} src={urlFor(item?.image?.asset?.url).format("webp").width(1200).url()} alt={item?.image?.asset?.alt} />
                                             </div>
                                         )
                                     )}
@@ -94,4 +95,4 @@ const ImageCarousel = ({ description, heading, gallery }) => {
     )
 }
 
-export default ImageCarousel;
+export default OurProcess;

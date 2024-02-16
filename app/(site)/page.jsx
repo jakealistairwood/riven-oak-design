@@ -19,14 +19,11 @@ async function fetchHomepageData() {
             asset->
           }
         },
-        scrollable_image{
+        introduction{
           heading,
           description,
-          gallery[] {
-            image
-          }
         },
-        image_swiper{
+        our_process{
           heading,
           description,
           gallery[] {

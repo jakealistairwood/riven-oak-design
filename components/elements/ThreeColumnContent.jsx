@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import AnimatedText from "./AnimatedText";
+import { urlFor } from "@/utils/SanityImage";
 
 export default function ThreeColumnContent(props) {
     const { grid_cards, section_heading } = props;
@@ -19,7 +20,7 @@ export default function ThreeColumnContent(props) {
                         {grid_cards?.map((card, index) => (
                             <div key={`grid-card-${index}`} className="flex flex-col">
                                 <div className="relative aspect-[519/605]">
-                                    <Image className="grayscale duration-500 transition-all hover:grayscale-0" fill={true} objectFit="cover" src={card?.image?.asset?.url} alt="" sizes="(max-width: 768px) 100vw, 500px" />
+                                    <Image className="grayscale duration-500 transition-all hover:grayscale-0" fill={true} objectFit="cover" src={urlFor(card?.image?.asset?.url).format("webp").width(600).url()} alt={card?.image?.asset?.alt || ""} />
                                 </div>
                                 <div className="mt-6">
                                     <h3 className="font-crimson-pro text-[1.7rem] font-normal">{card?.title}</h3>

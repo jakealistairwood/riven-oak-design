@@ -3,6 +3,7 @@
 import AnimatedText from "./AnimatedText";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { urlFor } from "@/utils/SanityImage";
 
 export default function AboutMasthead({ heading, subheading, image }) {
     return (
@@ -13,7 +14,7 @@ export default function AboutMasthead({ heading, subheading, image }) {
             >
                 <div className="h-full aspect-[1624/789]">
                     <Image
-                        src={image?.asset?.url}
+                        src={urlFor(image?.asset?.url).format("webp").quality(80).url()}
                         objectFit="cover"
                         fill={true}
                     />
